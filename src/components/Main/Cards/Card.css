@@ -1,0 +1,21 @@
+.formatCard{
+    padding: 20px;
+    margin: 30px;
+    background-color:black;
+}
+
+.formatTitle{
+text-align: center;
+color: cornflowerblue;
+}
+
+.formatPrice{
+    text-align: center;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.formatBtn{
+    display: flex;
+    justify-content: space-around;
+}
