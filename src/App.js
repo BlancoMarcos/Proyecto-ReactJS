@@ -1,13 +1,11 @@
 import Header from "./components/Header/NavBar/NavBar";
-import Main from  "./components/Main/Main";
+import Body from  "./components/Main/Body/Body";
 
 function App() {
   return (
     <div>
       <Header/>
-      <Main>
-        <h2>En esta tienda encontrará las camisetas de Lionel Messi</h2>
-      </Main>
+      <Body title={<h2>En esta tienda encontrará las camisetas de Lionel Messi</h2>}/>
     </div>
   );
 }
