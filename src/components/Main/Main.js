@@ -1,8 +1,8 @@
 import './Main.css'
 
-function Main() {
+function Main({children}) {
     return (
-        <h2 className='textTienda'>En esta tienda encontrará las camisetas de Lionel Messi</h2>
+        <h2 className='textTienda'>{children}</h2>
     )
 }
 

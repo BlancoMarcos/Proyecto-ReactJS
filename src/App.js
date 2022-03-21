@@ -5,7 +5,9 @@ function App() {
   return (
     <div>
       <Header/>
-      <Main/>
+      <Main>
+        <h2>En esta tienda encontrará las camisetas de Lionel Messi</h2>
+      </Main>
     </div>
   );
 }
