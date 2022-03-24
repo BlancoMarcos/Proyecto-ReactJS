@@ -1,4 +1,4 @@
-import CardWidget from '../CardWidget/CardWidget';
+import CardWidget from '../Icon/Icon';
 import Button from '@mui/material/Button';
 import './NavBar.css';
 

@@ -1,5 +1,5 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import './CardWidget.css'
+import './Icon.css'
 
 const CardWidget = () => {
     return(

@@ -1,0 +1,11 @@
+.formatCard{
+    float: left;
+    margin: 30px;
+    border: 1px solid red;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
