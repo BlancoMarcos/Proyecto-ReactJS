@@ -1,6 +1,6 @@
-import './TitleBody.css'
+import './TitleMain.css'
 
-function Main({title}) {
+function TitleMain({title}) {
     return (
         <div>
             <h2 className='textTienda'>{title}</h2>
@@ -9,4 +9,4 @@ function Main({title}) {
     )
 }
 
-export default Main
+export default TitleMain

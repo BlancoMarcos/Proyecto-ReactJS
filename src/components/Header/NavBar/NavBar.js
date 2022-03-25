@@ -10,10 +10,10 @@ function Header() {
                 <img src='logoMessi.png' className='logoImg'/>
             </div>
             <ul className= 'navMenu'>
-             <li><Button variant="outlined">Inicio</Button></li>
-             <li><Button variant="outlined">Nosotros</Button></li>
-             <li><Button variant="outlined">Tienda</Button></li>
-             <li><Button variant="outlined">Contacto</Button></li>
+                <li><Button variant="outlined">Inicio</Button></li>
+                <li><Button variant="outlined">Nosotros</Button></li>
+                <li><Button variant="outlined">Tienda</Button></li>
+                <li><Button variant="outlined">Contacto</Button></li>
             </ul>
             <CardWidget />
         </header>
