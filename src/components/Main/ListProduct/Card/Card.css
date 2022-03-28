@@ -1,11 +1,26 @@
 .formatCard{
-    float: left;
-    margin: 30px;
-    border: 1px solid red;
-    text-align: center;
-    width: 200px;
-    height: 300px;
-    border-radius: 15px;
-    padding: 10px;
+    margin: 20px;
+    
+
 }
 
+.imgCard{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    max-width: 300px;
+    max-height: 400px;
+}
+
+.itemCard{
+    text-align: center;
+    margin: 10px;
+}
+
+.itemPrice{
+    font-size: 20px;
+}
+
+.buttonCard{
+    padding-top: 40px;
+}
