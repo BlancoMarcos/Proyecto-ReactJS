@@ -40,20 +40,22 @@ const ListProducts = () => {
         image: "psgAlt.webp"
     }]
 
-    const [products, setProducts] = useState ([])
+    const [products, setProducts] = useState ([]);
 
     // Creamos una promesa para que nos devuelva los productos
-    const getProducts = () => {
-        return new Promise ((resolve, reject) => {
-            return resolve (mockProducts)
-        })
-    }
+        async function getProducts() {
+            let promise = new Promise ((resolve, reject) => {
+                setTimeout(() => {resolve (mockProducts)}, 2000);
+            })
+            let result = await promise;
+            return (result);
+        }
 
-    useEffect(() => {
-        getProducts().then((dataProduct) => { //Con el "then" podemos visualizar los datos de la promesa
-            setProducts(dataProduct) // Acá guardamos los datos en el state de productos.
-        }).finally(() => {console.log("Finalizó la llamada")})
-    }, [])
+        useEffect(() => {
+            getProducts().then((dataProduct) => { //Con el "then" podemos visualizar los datos de la promesa
+                setProducts(dataProduct) // Acá guardamos los datos en el state de productos.
+            }).finally(() => {console.log("Finalizó la llamada")})
+        }, [])
 
 
     return(
