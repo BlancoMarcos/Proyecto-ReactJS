@@ -5,8 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-function Cards({dataProduct}) {
-  const {title, price, stock, image } = dataProduct
+function Cards({data}) {
+  const {title, price, stock, image } = data
   const [ count, setCount ] = useState(0)
   const [ countTest, setCountTest ] = useState(0)
 
@@ -14,9 +14,11 @@ function Cards({dataProduct}) {
 const addStock = () => {
   setCount(count + 1)
 }
+
 const removeStock = () => {
   setCountTest(countTest - 1)
 }
+
 return (
     <Card className='formatCard' sx={{ maxWidth: 320, }}>
       <img className='imgCard' src={`./${image}`} alt={image}/>

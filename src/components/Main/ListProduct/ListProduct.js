@@ -1,69 +1,32 @@
-import './ListProduct.css'
 import React,{useState, useEffect} from 'react'
-import Card from "../ListProduct/Card/Card"
+import Cards from '../Card/Card'
+import mockProducts from '../Utils/MockProducts'
 
-const ListProducts = () => {
-    // Creamos una constante para mostrar los productos
-    const mockProducts = [{
-        id: 1,
-        title: "Argentina Titular",
-        price: 8000,
-        stock: 40,
-        image: "argTit.webp"
-    },
-    {
-        id: 2,
-        title: "Argentina Entrenamiento",
-        price: 6000,
-        stock: 15,
-        image: "argAfa.webp"
-    },
-    {
-        id: 3,
-        title: "PSG Titular",
-        price: 10000,
-        stock: 15,
-        image: "psgTit.webp"
-    },
-    {
-        id: 4,
-        title: "PSG Suplente",
-        price: 12000,
-        stock: 20,
-        image: "psgSup.webp"
-    },
-    {
-        id: 5,
-        title: "PSG Alternativa",
-        price: 14000,
-        stock: 15,
-        image: "psgAlt.webp"
-    }]
+const ListProducts = ({}) => {
 
-    const [products, setProducts] = useState ([]);
+    const [products, setProducts] = useState([])
 
     // Creamos una promesa para que nos devuelva los productos
-        async function getProducts() {
-            let promise = new Promise ((resolve, reject) => {
-                setTimeout(() => {resolve (mockProducts)}, 2000);
-            })
-            let result = await promise;
-            return (result);
-        }
+    async function getProducts() {
+        let promise = new Promise ((resolve, reject) => {
+            setTimeout(() => {resolve (mockProducts)}, 2000);
+        })
+        let result = await promise;
+        return (result);
+    }
 
-        useEffect(() => {
-            getProducts().then((dataProduct) => { //Con el "then" podemos visualizar los datos de la promesa
-                setProducts(dataProduct) // Acá guardamos los datos en el state de productos.
-            }).finally(() => {console.log("Finalizó la llamada")})
-        }, [])
-
+    useEffect(() => {
+        getProducts().then((dataProduct) => { //Con el "then" podemos visualizar los datos de la promesa
+            setProducts(dataProduct) // Acá guardamos los datos en el state de productos.
+        }).finally(() => {console.log("Finalizó la llamada")})
+    }, [])
 
     return(
         <div className='divClass'>
             {products.map( ( product ) => {
                 const {id} = product
                 return(
-                        <Card dataProduct={product} key={id}/>
+                        <Cards dataProduct={product} key={id}/>
                     
                 )
             })}
@@ -71,4 +34,4 @@ const ListProducts = () => {
     )
 }
 
-export default ListProducts
+export default ListProducts;
