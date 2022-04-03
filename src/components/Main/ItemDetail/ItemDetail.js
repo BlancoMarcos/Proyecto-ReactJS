@@ -1,25 +1,28 @@
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button'
 
-const ItemDetail = ({data}) => {
+export default function ItemDetail({ data }) {
+
     return(
-        <Container className='container-general'> 
-            <div className='container-detail'>
-            <div className='container-detail__img'>
-                <img src={data.image} alt="Camiseta Argentina" />
-            </div>
-            <div className='container-detail__info'>
-                <h3 className='info__title'>{data.title}</h3>
-                <p className='info__text'>$ {data.price}</p>
-                <p className='info__text'>12 cuotas sin interes de ${(data.price/12).toFixed(2)}</p>
-                <p className='info__subtitle'>STOCK: {data.stock}</p>
-                <p className='info__subtitle'>DETALLE</p>
-                <p className='info__text detail__text'>{data.description}</p>
-                <Button className='detail__btn-buy'>COMPRAR</Button>
-            </div>
-            </div>
-        </Container>
+        <Card className='formatCard' sx={{maxWidth: 320,}}>
+        <img className='imgCard' src={`./${data.image}`} alt={data.image}/>
+        <CardContent className="itemCard">
+            <Typography gutterBottom variant="h5" component="div">
+                {data.title}
+            </Typography>
+            <Typography variant="body2" color="text.primary">
+                {data.description}
+            </Typography>
+            <Typography variant="body2" color="text.primary">
+                Precio: ${data.price}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+                Cantidad disponible: {data.stock}
+            </Typography>
+            <Button variant="contained" color="success">Agregar al carrito</Button>
+        </CardContent>
+    </Card>
     )
 }
-
-export default ItemDetail

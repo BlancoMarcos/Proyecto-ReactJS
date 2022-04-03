@@ -1,30 +1,43 @@
-import { useState, useEffect } from "react";
-import mockProduct from "../Utils/MockProducts";
-import ItemDetail from "../ItemDetail/ItemDetail"
+import React,{useState, useEffect} from 'react'
+import { mockProduct } from '../Products/ProductDetail'
+import ItemDetail from '../ItemDetail/ItemDetail'
+
 
 const ItemDetailContainer = () => {
-    const [props, setProps] = useState({})
-
-    const getProduct = () => {
-        return new Promise((resolve, reject) => {
+    
+    const [items, setItems] = useState([])
+    
+    // Cramos una promesa para que nos devuelva los productos
+    const getItems = () => {
+        return new Promise ((resolve, reject) =>{
             return resolve(mockProduct)
         })
     }
 
-    useEffect( () => {
-        getProduct().then( (producto) => {
-            setProps(producto)
-            //console.log("Llamada al mock:", producto)
-        }).finally( () => {
-            console.log("Termino la llamada")
+     // Usamos useEffect para poder visualizar los datos
+    
+    
+    
+     // useEffect(() => {
+    //     setTimeout(() => {
+    //         getItems().them(( data ) => {
+    //             setItems( data )
+    //         })
+    //     }, 2000)
+    // }, [])
+    
+
+    useEffect(() => {
+        getItems().then(( data ) => {
+            setItems( data )
         })
-    }, [])
+    })
 
     return (
-        <>
-            
-            <ItemDetail props={props}/>
-        </>
+        <div>
+            {console.table('Item detalle: ', items)}
+            <ItemDetail data={items} />
+        </div>
     )
 }
 

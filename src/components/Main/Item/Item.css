@@ -1,7 +1,7 @@
 .formatCard{
     margin: 20px;
-    
-
+    text-align: left;
+    box-shadow: 2px 6px 15px rgb(0, 0, 0);
 }
 
 .imgCard{
@@ -9,7 +9,6 @@
     margin-right: 10px;
     margin-top: 10px;
     max-width: 300px;
-    max-height: 400px;
 }
 
 .itemCard{
@@ -17,10 +16,3 @@
     margin: 10px;
 }
 
-.itemPrice{
-    font-size: 20px;
-}
-
-.buttonCard{
-    padding-top: 40px;
-}

@@ -7,7 +7,7 @@ function Header() {
     return(
         <header className='header'>
             <div className='logoHeader'>
-                <img src='logoMessi.png' className='logoImg'/>
+                <img src='logoMessi.png' className='logoImg' alt='LogoMessi'/>
             </div>
             <ul className= 'navMenu'>
                 <li><Button variant="outlined">Inicio</Button></li>

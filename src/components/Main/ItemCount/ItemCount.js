@@ -1,7 +1,8 @@
 import React,{useState} from "react"
+import Button from '@mui/material/Button'
 
 const ItemCount = ({stock}) => {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
 
     const onAdd = () => {
         if(count < stock) {
@@ -9,19 +10,18 @@ const ItemCount = ({stock}) => {
         }
     }
 
-    const restStock = () => {
+    const offAdd = () => {
         if(count > 0) {
             setCount(count - 1)
         }
     }
 
     return(
-        <>
-            <button onClick={onAdd}>+</button>
+        <div>
+            <Button onClick={onAdd} variant="contained" color="success">+</Button>
             <p>{count}</p>
-            <button onClick={restStock}>-</button>
-        </>
-    )    
+            <Button onClick={offAdd} variant="contained" color="success">-</Button>
+        </div>
+    )
 }
-
 export default ItemCount
