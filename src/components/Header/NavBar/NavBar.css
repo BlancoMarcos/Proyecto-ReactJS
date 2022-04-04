@@ -27,4 +27,8 @@ ul.navMenu {
 ul.navMenu li {
   margin-right: 15px;
 }
-  
+
+ul.navMenu li button{
+  color: white;
+  list-style: none;
+}  

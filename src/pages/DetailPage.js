@@ -8,7 +8,7 @@ import React,{ useState, useEffect } from "react";
 
 // Components
 
-import { mockProducts } from "../Products/Products";
+import { mockProducts } from "../components/Main/Products/Products";
 
 
 const DetailPage = () => {
@@ -29,7 +29,7 @@ const DetailPage = () => {
     return(
         <Container>
             <Card className='formatCard' sx={{maxWidth: 320,}}>
-                <img className='imgCard' src={`./${product.image}`} alt={product.title}/>
+                <img className='imgCard' src={`../${product.image}`} alt={product.title}/>
                 <CardContent className="itemCard">
                     <Typography gutterBottom variant="h5" component="div">
                         {product.title} 
