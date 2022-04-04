@@ -7,10 +7,10 @@ import Header from "./components/Header/NavBar/NavBar";
 
 // Pages
 
-import ContactPage from './pages/Contact'
-import HomePage from './pages/Home'
+import ContactPage from './pages/Contact/Contact'
+import HomePage from './pages/Home/HomeProducts'
 import NotFound from './pages/ErrorPage/ErrorPage'
-import DetailPage from './pages/DetailPage';
+import DetailItem from './pages/ItemDetail/DetailPage';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/productos" element={<HomePage />} />
-          <Route path="/productos/:id" element={<DetailPage />} />
+          <Route path="/productos/:id" element={<DetailItem />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

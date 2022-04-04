@@ -1,4 +1,7 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+// Estilos
+
 import './Icon.css'
 
 const CardWidget = () => {

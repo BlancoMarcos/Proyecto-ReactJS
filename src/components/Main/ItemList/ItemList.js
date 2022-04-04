@@ -1,7 +1,14 @@
-import { mockProducts } from "../Products/Products";
 import React,{useEffect, useState} from "react";
-import Cards from "../Item/Item";
+
+// Estilo
+
 import './ItemList.css'
+
+// Components
+
+import { mockProducts } from "../Products/Products";
+import Cards from "../Item/Item";
+
 
 const ListProducts = () => {
 

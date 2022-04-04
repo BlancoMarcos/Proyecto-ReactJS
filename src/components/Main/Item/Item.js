@@ -1,9 +1,16 @@
-import './Item.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-// import ItemCount from "../ItemCount/ItemCount";
 import Button from '@mui/material/Button'
+
+// Estilo
+
+import './Item.css'
+
+// Components
+
+// import ItemCount from "../ItemCount/ItemCount";
+
 
 export default function Cards({ data }) {
     const {title, price, stock, image} = data
