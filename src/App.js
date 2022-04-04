@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 // Components
 
 import Header from "./components/Header/NavBar/NavBar";
+import Footer from './components/Footer/Footer';
 
 // Pages
 
@@ -20,14 +21,14 @@ function App() {
 
     <div>
       <BrowserRouter>
-        <Header/>
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/productos" element={<HomePage />} />
-          <Route path="/productos/:id" element={<DetailItem />} />
+          <Route path="/:id" element={<DetailItem />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

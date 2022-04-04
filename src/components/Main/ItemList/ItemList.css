@@ -1,4 +1,8 @@
-.cardContainer{
+.cards{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 200px;
+    padding-top: 50px;
+    row-gap: 70px;
 }

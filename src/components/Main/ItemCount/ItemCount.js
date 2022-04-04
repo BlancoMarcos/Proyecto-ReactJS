@@ -1,6 +1,10 @@
 import React,{useState} from "react"
 import Button from '@mui/material/Button'
 
+// Estilos
+
+import './ItemCount.css'
+
 const ItemCount = ({stock}) => {
     const [count, setCount] = useState(1)
 
@@ -17,10 +21,10 @@ const ItemCount = ({stock}) => {
     }
 
     return(
-        <div>
-            <Button onClick={onAdd} variant="contained" color="success">+</Button>
-            <p>{count}</p>
+        <div className="itemCount">
             <Button onClick={offAdd} variant="contained" color="success">-</Button>
+                <p>{count}</p>
+            <Button onClick={onAdd} variant="contained" color="success">+</Button>        
         </div>
     )
 }

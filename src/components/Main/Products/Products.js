@@ -9,7 +9,7 @@ export const mockProducts =
     },
     {
         id: 2,
-        title: "Argentina Entrenamiento",
+        title: "Arg Entrenamiento",
         price: 6000,
         stock: 15,
         image: "argAfa.webp",

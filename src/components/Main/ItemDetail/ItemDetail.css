@@ -1,0 +1,35 @@
+.cardDetail{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.itemCard{
+    display: block;
+    justify-content: space-between;
+}
+
+.imgCard{
+    padding: 10px;
+    padding-bottom: 20px;
+    width: 350px;
+    height: 550px;
+}
+
+.titleCard{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.priceCard{
+    text-align: center;
+}
+
+.textCard{
+    font-size: 20px;
+    padding: 20px;
+}
+
+.btnCardDetail{
+    position:sticky;
+}

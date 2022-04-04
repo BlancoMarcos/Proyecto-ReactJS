@@ -1,6 +1,3 @@
-import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-
 // Estilos
 
 import './NavBar.css';
@@ -17,12 +14,12 @@ function Header() {
                 <img src='../logoMessi.png' className='logoImg' alt='LogoMessi'/>
             </div>
             <ul className= 'navMenu'>
-                <li><Button variant="outlined">
-                    <Link to={'/productos'}>Inicio</Link>
-                    </Button></li>
-                <li><Button variant="outlined">
-                    <Link to={'/contacto'}>Contacto</Link>
-                    </Button></li>
+                <li>
+                    <a Link to={'/'} href='/'>HOME</a>
+                </li>
+                <li>
+                    <a Link to={'/contacto'} href='/contacto'>CONTACTO</a>
+                </li>
             </ul>
             <CardWidget />
         </header>

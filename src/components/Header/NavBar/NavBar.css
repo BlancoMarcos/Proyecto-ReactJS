@@ -10,7 +10,9 @@
   
 .logoImg{
   width: 70px;
-  padding-top: 15px;
+  height: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 39px;
 }
   
@@ -18,17 +20,17 @@
 /* MENU */
   
 ul.navMenu {
-  list-style: none;
   display: flex;
   padding-right: 50px;
-  padding-top: 50px
+  padding-top: 60px;
 }
   
 ul.navMenu li {
   margin-right: 15px;
 }
 
-ul.navMenu li button{
+ul.navMenu li a {
   color: white;
-  list-style: none;
-}  
+  text-decoration: none;
+}
+

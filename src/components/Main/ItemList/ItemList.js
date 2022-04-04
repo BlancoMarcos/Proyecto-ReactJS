@@ -29,10 +29,10 @@ const ListProducts = () => {
 
 
     return(
-        <div className="cardContainer">
+        <div className="cards">
             {products.map ((product) => {
                 return(
-                    <Cards data={product} key={product.id}/>
+                        <Cards data={product} key={product.id}/>
                 )
             })}
         </div>  

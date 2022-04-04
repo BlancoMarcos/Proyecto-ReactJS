@@ -7,30 +7,20 @@ import Button from '@mui/material/Button'
 
 import './Item.css'
 
-// Components
-
-// import ItemCount from "../ItemCount/ItemCount";
-
-
 export default function Cards({ data }) {
-    const {title, price, stock, image} = data
+    const {title, price, image} = data
 
     return (
-        <Card className='formatCard' sx={{maxWidth: 320,}}>
-            <img className='imgCard' src={`./${image}`} alt={image}/>
+        <Card sx={{maxWidth: 250,}} className="cardBox">
+            <img className='itemCard' itemCard src={`./${image}`} alt={image}/>
             <CardContent className="itemCard">
                 <Typography gutterBottom variant="h5" component="div">
                     {title}
                 </Typography>
-                <Typography variant="body2" color="text.primary">
-                    Precio: ${price}
+                <Typography gutterBottom variant="h6" color="text.primary">
+                    $ {price}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Cantidad disponible: {stock}
-                </Typography>
-                    {/* <ItemCount stock={stock}/> */}
                 <Button variant="contained" color="success">Agregar al carrito</Button>
             </CardContent>
         </Card>
-      );
-    }
+      )}
