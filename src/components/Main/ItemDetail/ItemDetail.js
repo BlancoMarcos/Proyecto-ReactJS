@@ -1,5 +1,4 @@
 import { Container } from "@mui/material"
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
@@ -58,46 +57,35 @@ const DetailPage = () => {
 
         return (
             <Container>
-                <Card className="cardDetail">
+                <div  className="cardDetail">
                     <div className="btnCard">
                         <img  className="imgCard" src={`../${product.image}`} alt={product.title}/>
                     </div>
-                    <div className="itemCard">
+                    <div>
                         <Box>
-                            <CardContent className="">
+                            <CardContent>
                                 <Typography className="titleCard" component="div" variant="h4">
                                     {product.title}
                                 </Typography>
                                 <Typography className="priceCard" component="div" variant="h5">
                                     ${product.price}
                                 </Typography>
-                                <Typography className="textCard" variant="p" color="text.primary" component="div">
+                                <Typography className="textCard" variant="h6" color="text.primary" component="div">
                                     {product.description}
+                                </Typography>
+                                <Typography className="stockCard" variant="p" color="text.secundary" component="div">
+                                    Artículos disponibles: {product.stock}
                                 </Typography>
                             </CardContent>
                         </Box>
-                        <Box>
-                            <CardActions disableSpacing>
-                            <ExpandMore
-                                expand={expanded}
-                                onClick={handleExpandClick}
-                                    aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
-                            <ExpandMoreIcon />
-                                </ExpandMore>
-                            </CardActions>
-                            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                <CardContent>
-                                    <Typography paragraph>
-                                        <ItemCount stock={product.stock}/>
-                                    </Typography>
-                                </CardContent>
-                            </Collapse>
-                            <Button className="btnCardDetail" variant="contained" color="success">Agregar al carrito</Button>
+                        <Box className="btnCardDetail">
+                            <Typography paragraph>
+                                <ItemCount stock={product.stock}/>
+                            </Typography>
+                            <Button variant="contained" color="success">Agregar al carrito</Button>
                         </Box>
                     </div>
-                </Card>
+                </div>
             </Container>
           
         );

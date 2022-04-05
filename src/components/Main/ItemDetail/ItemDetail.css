@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 80px;
+    background-color: cornsilk;
 }
 
 .itemCard{
@@ -11,7 +12,6 @@
 
 .imgCard{
     padding: 10px;
-    padding-bottom: 20px;
     width: 350px;
     height: 550px;
 }
@@ -21,15 +21,25 @@
     padding-bottom: 30px;
 }
 
+.stockCard{
+    font-size: 17px;
+    color: gray;
+    margin-top: 20px;
+}
+
 .priceCard{
     text-align: center;
 }
 
 .textCard{
     font-size: 20px;
-    padding: 20px;
+    padding-top: 20px;
 }
 
+
 .btnCardDetail{
-    position:sticky;
+    padding-top: 90px;
+    height: 136px;
+    text-align: center;
+    justify-content: end;
 }

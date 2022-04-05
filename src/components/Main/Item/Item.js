@@ -11,9 +11,9 @@ export default function Cards({ data }) {
     const {title, price, image} = data
 
     return (
-        <Card sx={{maxWidth: 250,}} className="cardBox">
-            <img className='itemCard' itemCard src={`./${image}`} alt={image}/>
-            <CardContent className="itemCard">
+        <Card sx={{maxWidth: 290,}} className="cardBox">
+            <img className='itemCard' src={`./${image}`} alt={image}/>
+            <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     {title}
                 </Typography>
