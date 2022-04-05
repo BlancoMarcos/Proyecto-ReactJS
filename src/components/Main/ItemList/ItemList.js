@@ -7,7 +7,7 @@ import './ItemList.css'
 // Components
 
 import { mockProducts } from "../Products/Products";
-import Cards from "../Item/Item";
+import Cards from "../Item/Items";
 
 
 const ListProducts = () => {

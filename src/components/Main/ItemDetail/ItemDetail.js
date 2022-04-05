@@ -5,12 +5,6 @@ import Button from '@mui/material/Button'
 import { useParams } from "react-router-dom";
 import React,{ useState, useEffect } from "react";
 import Box from '@mui/material/Box';
-import Collapse from '@mui/material/Collapse';
-import CardActions from '@mui/material/CardActions';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-
 
 // Estilo
 
@@ -37,23 +31,6 @@ const DetailPage = () => {
             }
         })
     }
-
-    const ExpandMore = styled((props) => {
-        const { expand, ...other } = props;
-        return <IconButton {...other} />;
-      })(({ theme, expand }) => ({
-        transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-          duration: theme.transitions.duration.shortest,
-        }),
-      }));
-      
-        const [expanded, setExpanded] = React.useState(false);
-      
-        const handleExpandClick = () => {
-          setExpanded(!expanded);
-        };
 
         return (
             <Container>
