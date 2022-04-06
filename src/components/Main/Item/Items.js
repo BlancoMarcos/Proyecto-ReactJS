@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 
 // Estilo
 
-import './Item.css'
+import './Items.css'
 
 export default function Cards({ data }) {
     const {title, price, image} = data
