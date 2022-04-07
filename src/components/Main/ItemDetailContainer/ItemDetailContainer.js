@@ -2,7 +2,6 @@
 
 import DetailPage from '../ItemDetail/ItemDetail'
 
-
 const ItemDetailContainer = () => {
     
     return (

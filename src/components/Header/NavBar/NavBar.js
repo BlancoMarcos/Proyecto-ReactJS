@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // Estilos
 
 import './NavBar.css';
@@ -11,7 +13,9 @@ function Header() {
     return(
         <header className='header'>
             <div className='logoHeader'>
-                <img src='../logoMessi.png' className='logoImg' alt='LogoMessi'/>
+                <Link to={`/`}>
+                    <img src='../logoMessi.png' className='logoImg' alt='LogoMessi'/>
+                </Link>
             </div>
             <ul className= 'navMenu'>
                 <li>
