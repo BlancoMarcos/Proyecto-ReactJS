@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from "react";
+import { Container } from "@mui/material";
 
 // Estilo
 
@@ -11,7 +12,7 @@ import Cards from "../Item/Items";
 import { useParams } from "react-router-dom";
 
 
-const ListProducts = () => {
+const ListProducts = (props) => {
     
     const {category} = useParams()
     const [products, setProducts] = useState([])
@@ -41,6 +42,9 @@ const ListProducts = () => {
 
     return(
         <div className="cards">
+            <Container fixed className="ultimosProductos">
+                <h2>{props.title}</h2>
+            </Container>
             {products.map ((product) => {
                 return(
                         <Cards data={product} key={product.id}/>

@@ -16,7 +16,7 @@ import { mockProducts } from "../Products/Products";
 import ItemCount from "../ItemCount/ItemCount";
 
 
-const DetailPage = () => {
+const DetailPage = ({title, price, stock, descriotion, image}) => {
     const {id} = useParams()
     const [product, setProduct] = useState({})
 
@@ -30,6 +30,10 @@ const DetailPage = () => {
                 return setProduct(product)
             }
         })
+    }
+
+    const addProduct = (cant) => {
+        alert (`Has agregado ${cant} producto`)
     }
 
         return (
@@ -55,12 +59,9 @@ const DetailPage = () => {
                                 </Typography>
                             </CardContent>
                         </Box>
-                        <Box className="btnCardDetail">
-                            <Typography paragraph>
-                                <ItemCount stock={product.stock}/>
-                            </Typography>
-                            <Button variant="contained" color="success">Agregar al carrito</Button>
-                        </Box>
+                        <Typography paragraph className="btnCardDetail">
+                            <ItemCount stock={product.stock} addProduct={addProduct}/>
+                        </Typography>
                     </div>
                 </div>
             </Container>

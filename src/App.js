@@ -12,6 +12,7 @@ import ContactPage from './pages/Contact/Contact'
 import HomePage from './pages/Home/HomeProducts'
 import NotFound from './pages/ErrorPage/ErrorPage'
 import DetailItem from './pages/ItemDetail/DetailPage';
+import Cart from './pages/Cart/Cart';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/:category/" element={<HomePage />} />
           <Route path="/:category/:id" element={<DetailItem />} />
           <Route path="/contacto" element={<ContactPage />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
