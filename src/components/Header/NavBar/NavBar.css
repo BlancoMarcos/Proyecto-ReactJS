@@ -19,14 +19,9 @@
   
 /* MENU */
   
-ul.navMenu {
-  display: flex;
-  padding-right: 50px;
-  padding-top: 60px;
-}
-  
-ul.navMenu li {
-  margin-right: 15px;
+.navMenu{
+  padding-top: 70px;
+  margin-left: 25px;
 }
 
 button a {

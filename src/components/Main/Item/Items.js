@@ -12,7 +12,7 @@ export default function Cards({ data }) {
     const {title, price, image, id} = data
 
     return (
-        <Link to={`/category/${id}`}>
+        <Link to={`/category/${id}`} className="linkBox">
             <Card sx={{maxWidth: 290,}} className="cardBox">
                 <img className='itemCard' src={`./${image}`} alt={image}/>
                 <CardContent>

@@ -41,14 +41,14 @@ function Header() {
                 >
                 <a Link to={'/'} href='/'>HOME</a>
             </Button>
-            <Button
+            <Button className='prodBox'
                 id="fade-button"
                 aria-controls={open ? 'fade-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
                 >
-                Productos
+                <a Link to={'#fade-menu'} href='#fade-menu'>Productos</a>
             </Button>
             <Menu
                 id="fade-menu"
