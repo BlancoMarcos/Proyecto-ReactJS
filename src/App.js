@@ -24,7 +24,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/:id" element={<DetailItem />} />
+          <Route path="/:category/" element={<HomePage />} />
+          <Route path="/:category/:id" element={<DetailItem />} />
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

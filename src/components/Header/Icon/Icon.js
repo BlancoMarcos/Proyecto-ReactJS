@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import './Icon.css'
 
-const CardWidget = () => {
+const CartWidget = () => {
     return(
         <div>
             <ShoppingCartIcon className='buyIcon' fontSize='large'/>
@@ -12,4 +12,4 @@ const CardWidget = () => {
     )
 }
 
-export default CardWidget
+export default CartWidget

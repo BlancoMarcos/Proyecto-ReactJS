@@ -16,7 +16,7 @@ export default function Cards({ data }) {
             <Card sx={{maxWidth: 290,}} className="cardBox">
                 <img className='itemCard' src={`./${image}`} alt={image}/>
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography className="titleBox" gutterBottom variant="h5" component="div">
                         {title}
                     </Typography>
                     <Typography gutterBottom variant="h6" color="text.primary">

@@ -29,7 +29,7 @@ ul.navMenu li {
   margin-right: 15px;
 }
 
-ul.navMenu li a {
+button a {
   color: white;
   text-decoration: none;
 }
