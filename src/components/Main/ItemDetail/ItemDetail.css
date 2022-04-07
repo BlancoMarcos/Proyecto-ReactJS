@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 80px;
-    background-color: cornsilk;
+    border: 1px solid black;
+    box-shadow: 2px 6px 15px rgb(0, 0, 0);
 }
 
 .itemCard{
@@ -12,7 +13,7 @@
 
 .imgCard{
     padding: 10px;
-    width: 350px;
+    width: 430px;
     height: 550px;
 }
 
