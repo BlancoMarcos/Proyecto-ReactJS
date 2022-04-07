@@ -61,13 +61,13 @@ function Header() {
                 TransitionComponent={Fade}
                 >
                 <MenuItem onClick={handleClose}>
-                    <Link to={'/camisetas'}>Camisetas</Link>
+                    <Link to={'/argentina'}>Argentina</Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link to={'/botines'}>Botines</Link>
+                    <Link to={'/psg'}>PSG</Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link to={'/accesorios'}>Accesorios</Link>
+                    <Link to={'/barcelona'}>Barcelona</Link>
                 </MenuItem>
             </Menu>
             <Button
