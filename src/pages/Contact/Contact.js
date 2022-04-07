@@ -1,52 +1,61 @@
-import Container from '@mui/material/Container'
+
+import { useState } from 'react'
+import Container from '@mui/material/Container';    
+
 
 const ContactPage = () => {
+
+    const [value, setValue] = useState('')
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("Envio de nombre: ", value)
+    }
+
+    const SendForm = () => {
+        alert(`¡Formulario enviado!`)
+    }
+
     return(
-        <Container>
-            <form action="" name="client_info" method="GET">
-                    <div>
+        <Container className='container-general help'> 
+
+            <h2>Preguntas Frecuentes</h2>
+            <div className='faq-section'>
+                <section>
+                    <h3>Consultas de stock</h3>
+                    <h4>¿Hay stock de todos los productos?</h4>
+                    <p>
+                        Todos los productos que publicamos están en stock. En caso de agotarse algún talle o color, esa característica se bloqueará, se verá color gris y no podrás seleccionarla. Haciendo click en el botón Consultar disponibilidad vas a poder realizar consulta de disponibilidad de stock y te enviaremos un email cuando haya stock nuevamente.
+                    </p>
+                    <h4>¿Hay algún límite de compra?</h4>
+                    <p>
+                        El único límite de compra que tenemos es el stock de nuestro E-Shop. Si deseás hacer una compra mayorista comunicate con nosotros a 
+                    </p>
+                </section>
+                <section>
+                    <h3>Envío y seguimiento</h3>
+                    <h4>¿Puede recibir el paquete otra persona?</h4>
+                    <p>Tu pedido puede ser recibido por cualquier persona mayor de 18 años que se encuentre en el domicilio registrado.</p>
+                    <h4>¿Cuándo voy a recibir mi pedido?</h4>
+                    <p>Los pedidos son entregados a través de los correos Andreani – Saires y Moova en toda la República Argentina.</p>
+                    <h4>¿Qué pasa si no hay nadie cuando traen mi pedido?</h4>
+                    <p>Si no hay nadie en el domicilio que nos indicaste, el correo regresará a las 48 horas. En caso de no encontrar a nadie, deberás dirigirte al centro de distribución asignado a tu pedido dentro de las 72 horas con tu DNI y el código que te enviamos (tracking number).</p>
+                </section>
+                <section>
+                    <h3>Contacto</h3>
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" placeholder='Nombre'/>
+                        <input type="text" placeholder='Apellido'/>
+                        <input type="mail" placeholder='mail'/>
                         <div>
-                            <label for="name">Nombre: </label>
-                        </div>
                         <div>
-                            <input type="text" id="name" name="name" placeholder="Escriba su nombre"/>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <label for="surname">Apellido: </label>
-                        </div>
-                        <div>
-                            <input type="text" id="surname" name="surname" placeholder="Escriba su apellido"/>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <label for="email">E-Mail: </label>
-                        </div>
-                        <div>
-                            <input placeholder="correo@ejemplo.com"/>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <textarea name="query" id="query" rows="10"
-                                placeholder="Por favor, escriba su consulta."></textarea>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <label class="text-white" for="update_works">¿Le gustaría recibir actualizaciones por correo electrónico sobre mis últimos trabajos?</label>
-                            <input type="checkbox" id="update_works" name="update_works" value="1"/>
+                        <   input type="reset" value="Borrar"/>
+                            <input onClick={SendForm} type="submit" value="Enviar"/>
                         </div>
                     </div>
-                    <div>
-                        <div>
-                            <input type="reset" value="Borrar"/>
-                            <input type="submit" value="Enviar"/>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </section>
+            </div>
         </Container>
     )
 }
