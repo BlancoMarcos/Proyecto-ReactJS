@@ -39,7 +39,7 @@ function Header() {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 >
-                <a Link to={'/'} href='/'>HOME</a>
+                <Link to={'/'} href='/'>HOME</Link>
             </Button>
             <Button className='prodBox'
                 id="fade-button"
@@ -48,10 +48,10 @@ function Header() {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
                 >
-                <a Link to={'#fade-menu'} href='#fade-menu'>Productos</a>
+                <Link to={'#productos'} href='#fade-menu'>Productos</Link>
             </Button>
             <Menu
-                id="fade-menu"
+                id="productos"
                 MenuListProps={{
                 'aria-labelledby': 'fade-button',
                 }}
@@ -76,7 +76,7 @@ function Header() {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 >
-                <a Link to={'/contacto'} href='/contacto'>CONTACTO</a>
+                <Link to={'/contacto'} href='/contacto'>CONTACTO</Link>
             </Button>
             </div>
             <CartWidget />
