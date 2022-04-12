@@ -1,4 +1,7 @@
+// React
 import { useState, useContext } from 'react'
+
+// MUI
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -6,7 +9,11 @@ import Divider from '@mui/material/Divider';
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
+
+// Components
 import CartContext from '../../../Context/CartContext';
+
+// Estilo
 import './Icon.css'
 
 const CartWidget = () => {
@@ -75,7 +82,7 @@ const CartWidget = () => {
                             <MenuItem  key={cartProduct.id}>
                                 <div className='modal'>
                                     <div>
-                                        <img className='modalImg' src={`./${cartProduct.image}`} /> 
+                                        <img className='modalImg' src={`../${cartProduct.image}`} /> 
                                     </div>
                                     <div className='modalText'>
                                         <p>{cartProduct.title}</p>
