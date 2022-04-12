@@ -22,10 +22,12 @@ const ItemCount = ({stock, addProduct}) => {
     }
 
     return(
-        <div className="itemCount">
-            <Button className="btnCount" onClick={offAdd} variant="contained" color="success" disabled={count === 1 ? true : false}>-</Button>
-                <p>{count}</p>
-            <Button onClick={onAdd} variant="contained" color="success" disabled={count === stock ? true : false}>+</Button>
+        <div className="btnBox">
+            <div className="itemCount">
+                <Button className="btnCount" onClick={offAdd} variant="contained" color="success" disabled={count === 1 ? true : false}>-</Button>
+                    <p>{count}</p>
+                <Button onClick={onAdd} variant="contained" color="success" disabled={count === stock ? true : false}>+</Button>
+            </div>
         </div>
     )
 }

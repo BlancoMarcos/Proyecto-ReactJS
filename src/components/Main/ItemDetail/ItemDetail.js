@@ -23,7 +23,8 @@ const DetailPage = ({data}) => {
 
     const{title, price, stock, description, image, id} = data
     const navigate = useNavigate()
-    const { cartProducts, addProductToCart } = useContext(CartContext)
+    const { cartProducts, addProductToCart } = useContext(CartContext);
+
     const changePage = () => {
         navigate(`/productos/${id}`)
         console.log("Cart products: ", cartProducts)
@@ -57,8 +58,11 @@ const DetailPage = ({data}) => {
                                 </Typography>
                             </CardContent>
                         </Box>
-                        <ItemCount className="itemCount" stock={stock}/>
+                        <ItemCount className="itemCount"/>
                         <div className="btnDetail">
+                            <Link to='/' className="linkBox">
+                                <Button variant="contained" color="success">Seguir en la Tienda</Button>
+                            </Link>
                             <Button onClick={addToCart} variant="contained" color="success">Agregar al carrito</Button>
                             <Link to='/cart' className="linkBox">
                                 <Button variant="contained" color="success">Finalizar compra</Button>
