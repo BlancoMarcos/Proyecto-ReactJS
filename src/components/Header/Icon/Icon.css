@@ -6,7 +6,7 @@
 }
 
 .countProduct{
-    color: red;
+    color: #0C84B4;
     padding-top: 15px;
     padding-right: 10px;
 }
@@ -17,14 +17,14 @@
 }
 
 .modalDelete{
-    padding-top: 35px;
+    width: 70px;
+    padding-top: 45px;
+    text-align: right;
 }
 
 .modalText{
-    padding-left: 10px;
-    column-gap: 30px;
-    display: flex;
-    justify-content: space-between;
+    padding: 10px;
+    width: 70px;
 }
 
 .btn-custom{
@@ -34,4 +34,10 @@
 .titleCart{
     text-align: center;
     font-size: 20px;
+}
+
+.modal{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
 }

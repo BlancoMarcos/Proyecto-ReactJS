@@ -33,7 +33,7 @@ export default function Cards({ data }) {
 
     return (
 
-            <Card sx={{maxWidth: 290,}} className="cardBox" onClick={changePage}>
+            <Card sx={{maxWidth: 340,}} className="cardBox" onClick={changePage}>
                 <img className='itemCard' src={`./${image}`} alt={image}/>
                 <CardContent>
                     <Typography className="titleBox" gutterBottom variant="h5" component="div">

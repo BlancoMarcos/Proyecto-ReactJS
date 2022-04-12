@@ -22,17 +22,10 @@ const ItemCount = ({stock, addProduct}) => {
     }
 
     return(
-        <div className="btnBox">
-            <div className="itemCount">
-                <Button className="btnCount" onClick={offAdd} variant="contained" color="success" disabled={count === 1 ? true : false}>-</Button>
-                    <p>{count}</p>
-                <Button onClick={onAdd} variant="contained" color="success" disabled={count === stock ? true : false}>+</Button>
-            </div>
-            <div>
-                <Link to='/cart' className="linkBox">
-                    <Button onClick={() => addProduct(count)} variant="contained" color="success">Agregar al carrito</Button>
-                </Link> 
-            </div>
+        <div className="itemCount">
+            <Button className="btnCount" onClick={offAdd} variant="contained" color="success" disabled={count === 1 ? true : false}>-</Button>
+                <p>{count}</p>
+            <Button onClick={onAdd} variant="contained" color="success" disabled={count === stock ? true : false}>+</Button>
         </div>
     )
 }

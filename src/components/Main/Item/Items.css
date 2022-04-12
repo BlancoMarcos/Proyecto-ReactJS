@@ -1,12 +1,11 @@
 .itemCard{
     height: 350px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 290px;
 }
 
 .cardBox{
-    height: 800px;
+    height: 500px;
     text-align: center;
     background-color: cornsilk;
+    margin-bottom: 40px;
 }

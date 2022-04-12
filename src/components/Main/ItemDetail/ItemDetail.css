@@ -19,13 +19,16 @@
 
 .titleCard{
     text-align: center;
+    padding-top: 50px;
     padding-bottom: 30px;
 }
 
 .stockCard{
     font-size: 17px;
     color: gray;
-    margin-top: 20px;
+    padding-top: 20px;
+    height: 30px;
+    text-align: center;
 }
 
 .priceCard{
@@ -37,8 +40,14 @@
     padding-top: 20px;
 }
 
+.btnDetail{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
 
-.btnCardDetail{
-    padding-top: 50px;
-    text-align: center;
+.itemCount{
+    margin-top: 30px;
+    width: 300px;
+    margin-left: 186px;
 }

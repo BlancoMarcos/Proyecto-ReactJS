@@ -1,8 +1,11 @@
 import { Container } from "@mui/material"
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import React,{ useState, useEffect } from "react";
+import React,{ useContext } from "react";
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button'
+import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // Estilo
 
@@ -12,10 +15,24 @@ import './ItemDetail.css'
 
 import ItemCount from "../ItemCount/ItemCount";
 
+// Context
+import CartContext from '../../../Context/CartContext';
+
 
 const DetailPage = ({data}) => {
 
-    const{title, price, stock, description, image} = data
+    const{title, price, stock, description, image, id} = data
+    const navigate = useNavigate()
+    const { cartProducts, addProductToCart } = useContext(CartContext)
+    const changePage = () => {
+        navigate(`/productos/${id}`)
+        console.log("Cart products: ", cartProducts)
+    }
+    const addToCart = (e) => {
+        e.stopPropagation()
+        console.log("Productos agregados: ", cartProducts)
+        addProductToCart(data)
+    }
 
         return (
             <Container>
@@ -40,9 +57,13 @@ const DetailPage = ({data}) => {
                                 </Typography>
                             </CardContent>
                         </Box>
-                        <Typography paragraph className="btnCardDetail">
-                            <ItemCount stock={stock}/>
-                        </Typography>
+                        <ItemCount className="itemCount" stock={stock}/>
+                        <div className="btnDetail">
+                            <Button onClick={addToCart} variant="contained" color="success">Agregar al carrito</Button>
+                            <Link to='/cart' className="linkBox">
+                                <Button variant="contained" color="success">Finalizar compra</Button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </Container>

@@ -70,29 +70,28 @@ const CartWidget = () => {
                 >
                 <p className='titleCart'>Carrito de Compras</p>
                 <Divider />
-                {cartProducts.map( (cartProduct) => {
-                    return(
-                        <MenuItem className='modal' key={cartProduct.id}>
-                            <div>
-                                <img className='modalImg' src={`./${cartProduct.image}`} /> 
-                            </div>
-                            <div className='modalText'>
-                                <div className='item-cart-modal__info'>
-                                    <p>{cartProduct.title}</p>
-                                    <span>$ {cartProduct.price}</span>
+                    {cartProducts.map( (cartProduct) => {
+                        return(
+                            <MenuItem  key={cartProduct.id}>
+                                <div className='modal'>
+                                    <div>
+                                        <img className='modalImg' src={`./${cartProduct.image}`} /> 
+                                    </div>
+                                    <div className='modalText'>
+                                        <p>{cartProduct.title}</p>
+                                        <span>$ {cartProduct.price}</span>
+                                    </div>
+                                    <div className='modalDelete'>
+                                        <DeleteIcon />
+                                    </div>
                                 </div>
-                                <div className='modalDelete'>
-                                    <DeleteIcon />
-                                </div>
-                            </div>
-                        </MenuItem>
-                    )
-                })}
-                
+                            </MenuItem>
+                        )
+                    })} 
                 <Divider />
-                <div  className="btn-custom">
-                    <Button variant="contained" color="success"><Link to="/cart">Iniciar la compra</Link></Button> 
-                </div>
+                    <div  className="btn-custom">
+                        <Button variant="contained" color="success"><Link to="/cart">Iniciar la compra</Link></Button> 
+                    </div>
             </Menu>
         </div>
     )
