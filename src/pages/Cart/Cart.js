@@ -1,8 +1,8 @@
-import { ListItem } from "@mui/material"
-
 const Cart = () => {
   return (
-    <ListItem title='Carrito de la tienda' />
+    <div>
+      <h2>Cart</h2>
+    </div>
   )
 }
 

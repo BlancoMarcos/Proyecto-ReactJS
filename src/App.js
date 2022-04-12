@@ -14,6 +14,9 @@ import NotFound from './pages/ErrorPage/ErrorPage'
 import DetailItem from './pages/ItemDetail/DetailPage';
 import Cart from './pages/Cart/Cart';
 
+// Context
+import{ CartProvider } from './Context/CartContext';
+
 
 function App() {
   return (
@@ -21,18 +24,20 @@ function App() {
     //JSX
 
     <div>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/:category/" element={<HomePage />} />
-          <Route path="/:category/:id" element={<DetailItem />} />
-          <Route path="/contacto" element={<ContactPage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/:category/" element={<HomePage />} />
+            <Route path="/:category/:id" element={<DetailItem />} />
+            <Route path="/contacto" element={<ContactPage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

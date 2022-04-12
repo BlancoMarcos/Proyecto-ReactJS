@@ -3,23 +3,31 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
 import { useNavigate } from 'react-router-dom';
+import React,{ useContext } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 
 // Estilo
 
 import './Items.css'
 
+// Context
+import CartContext from '../../../Context/CartContext';
+
 export default function Cards({ data }) {
-    const {title, price, image, id} = data
+    const {title, price, image, id, stock} = data
 
     // Creamos una const con "useNavigate" para reemplazarla por "Link"
     const navigate = useNavigate()
+    const { cartProducts, addProductToCart } = useContext(CartContext)
     const changePage = () => {
         navigate(`/productos/${id}`)
+        console.log("Cart products: ", cartProducts)
     }
 
     const addToCart = (e) => {
         e.stopPropagation()
-        console.log("Agrego al carrito")
+        console.log("Productos agregados: ", cartProducts)
+        addProductToCart(data)
 
     }
 

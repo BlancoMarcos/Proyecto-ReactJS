@@ -17,10 +17,6 @@ const DetailPage = ({data}) => {
 
     const{title, price, stock, description, image} = data
 
-    const addProduct = (cant) => {
-        alert (`Has agregado ${cant} producto`)
-    }
-
         return (
             <Container>
                 <div  className="cardDetail">
@@ -45,7 +41,7 @@ const DetailPage = ({data}) => {
                             </CardContent>
                         </Box>
                         <Typography paragraph className="btnCardDetail">
-                            <ItemCount stock={stock} addProduct={addProduct}/>
+                            <ItemCount stock={stock}/>
                         </Typography>
                     </div>
                 </div>
