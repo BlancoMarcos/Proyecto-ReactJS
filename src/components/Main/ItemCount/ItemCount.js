@@ -5,17 +5,17 @@ import Button from '@mui/material/Button'
 
 import './ItemCount.css'
 
-const ItemCount = ({stock, action}) => {
+const ItemCount = ({stock, initial}) => {
     const [count, setCount] = useState(1)
 
-    const onAdd = () => {
+    const handleIncrease = () => {
         if(count < stock) {
             setCount(count + 1)
         }
     }
 
-    const offAdd = () => {
-        if(count > 0) {
+    const handleDecrease = () => {
+        if(count > initial) {
             setCount(count - 1)
         }
     }
@@ -23,10 +23,10 @@ const ItemCount = ({stock, action}) => {
     return(
         <div className="btnBox">
             <div className="itemCount">
-                <Button onClick={offAdd} variant="contained" color="success" disabled={count === 1 ? true : false}>-</Button>
+                <Button onClick={handleDecrease} variant="contained" color="success" disabled={count === 1 ? true : false}>-</Button>
                     <p>{count}</p>
-                <Button onClick={onAdd} variant="contained" color="success" disabled={count === stock ? true : false}>+</Button>
-                {/* <Button onClick={(e) => action(e, count)} variant="contained" color="success">Agregar al carrito</Button> */}
+                <Button onClick={handleIncrease} variant="contained" color="success" disabled={count === stock ? true : false}>+</Button>
+                {/* <Button onClick={add} variant="contained" color="success">Agregar al carrito</Button> */}
             </div>
         </div>
     )

@@ -1,25 +1,26 @@
 import { createContext, useState } from "react";
 
-const CartContext = createContext();
+const CartContext = createContext([]);
 
 const CartProvider = ({children}) =>{
     const [cartProducts, setCartProducts] = useState([]);
+
     //funciones
-    const addProductToCart = (product, productQuantity) =>{
-        //reviso si ya existe el producto en el carrito
-        const indiceEncontrado = cartProducts.findIndex((cartProduct)=>{
-            return cartProduct.id === product.id;
-        })//si no existe lo agrego
-        if(indiceEncontrado === -1){
-            product.cantidad = productQuantity;
-            setCartProducts(cartProducts => [...cartProducts, product]);
-        }else{//si no, valido que no se quiera agrega más de lo que hay en stock
-            if (product.stock < (product.cantidad + productQuantity)){
-            }else{//si da el stock, sumo
-                cartProducts[indiceEncontrado].cantidad += productQuantity;
+        const addProductToCart=(product)=>{
+
+            const fProd = cartProducts.find(
+                (cartProducts) => cartProducts.id === product.id
+            )
+    
+            if (fProd) {
+                fProd.stock += product.stock
+                setCartProducts( [ ...cartProducts] )
+            } else {
+                setCartProducts( [ ...cartProducts, product ] )
             }
+            
         }
-    }
+
     const calculeTotalPrice = () => {
         let total = 0
 

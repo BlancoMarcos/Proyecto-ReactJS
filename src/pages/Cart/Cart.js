@@ -56,7 +56,7 @@ const Cart = () => {
                     <div >
                         <div className='priceTotal'>
                             <p>Total</p>
-                            <span>$ {calculeTotalPrice}</span>
+                            <span>$ {calculeTotalPrice()}</span>
                         </div>
                         <Button variant="contained" color="success">Completar compra</Button>
                     </div>
