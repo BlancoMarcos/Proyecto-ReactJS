@@ -58,7 +58,7 @@ const DetailPage = ({data}) => {
                                 </Typography>
                             </CardContent>
                         </Box>
-                        <ItemCount className="itemCount"/>
+                        <ItemCount className="itemCount" stock={stock}/>
                         <div className="btnDetail">
                             <Link to='/' className="linkBox">
                                 <Button variant="contained" color="success">Seguir en la Tienda</Button>

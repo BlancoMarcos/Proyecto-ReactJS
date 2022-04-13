@@ -3,7 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button'
 import { useNavigate } from 'react-router-dom';
-import React,{ useContext } from 'react';
+import React,{ useContext, useEffect, useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 
 // Estilo
@@ -18,6 +18,8 @@ export default function Cards({ data }) {
 
     // Creamos una const con "useNavigate" para reemplazarla por "Link"
     const navigate = useNavigate()
+    const [productQuantity, setProductQuantity] = useState(0)
+    const [mostrarItemCount, setMostrarItemCount] = useState(true)
     const { cartProducts, addProductToCart } = useContext(CartContext)
     const changePage = () => {
         navigate(`/productos/${id}`)
@@ -30,6 +32,18 @@ export default function Cards({ data }) {
         addProductToCart(data)
 
     }
+
+    const onAdd = (e, count) => {
+        if(!!e & productQuantity<1){
+            setProductQuantity(count)
+        }
+    }
+    useEffect( () => {
+        if(productQuantity>0){
+            setMostrarItemCount(false);
+            addProductToCart(data, productQuantity)
+        }
+    })
 
     return (
 
