@@ -2,6 +2,7 @@ import Container from '@mui/material/Container'
 import { useContext } from 'react';
 import { Button } from '@mui/material';
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
+import { Link } from 'react-router-dom';
 
 //Components
 import CartContext from '../../Context/CartContext';
@@ -12,16 +13,20 @@ import ItemCount from '../../components/Main/ItemCount/ItemCount';
 import './Cart.css'
 
 const Cart = () => {
-    const { cartProducts, deleteProduct, calculeTotalPrice } = useContext(CartContext)
+    const { cartProducts, deleteProduct, calculeTotalPrice, cleanCart } = useContext(CartContext)
     console.log("cartProducts:", cartProducts)
     return(
         <Container>
-            <div className='formatCart' >
+            <div>
+            <div className='btnCart'>
+                <Button onClick={cleanCart} variant="contained" color="success">Vaciar carrito</Button> 
+                <Button variant="contained" color="success"><Link to={'/'}>Continuar comprando</Link></Button>
+            </div>
                 
                 {cartProducts.map( (cartProduct) => {
-                    const { price, image, title, talle, id, stock } = cartProduct
+                    const { price, image, title, id, stock } = cartProduct
                     return(
-                        <div className="cart-item"  key={id}>
+                        <div className="cart-item"  key={cartProduct.id}>
                             <img src={`./${image}`} className='imgCart'/>
                             <div className='infoCart'>
                                 <div className='titleCart'>
@@ -42,23 +47,18 @@ const Cart = () => {
                             <div>
                                 <ItemCount className='itemCount'/>
                             </div>
-                            <DeleteForeverSharpIcon fontSize='large' onClick={() => deleteProduct(cartProduct)} className='btnCart'/>
+                            <DeleteForeverSharpIcon fontSize='large' onClick={() => deleteProduct(cartProduct)} className='btnDelete'/>
                         </div>
                     )
                 })}
                 
-                <div className="card-item">
-                    <Button >Continuar comprando</Button>
+                <div className="boxBuy">
                     <div >
-                        <div >
-                            <p>Subtotal</p>
-                            <span>$ {calculeTotalPrice}</span>
-                        </div>
-                        <div >
+                        <div className='priceTotal'>
                             <p>Total</p>
                             <span>$ {calculeTotalPrice}</span>
                         </div>
-                        <Button >Completar Compra</Button>
+                        <Button variant="contained" color="success">Completar compra</Button>
                     </div>
                 </div>
             </div>

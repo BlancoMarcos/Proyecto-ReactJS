@@ -7,8 +7,8 @@ const CartProvider = ({children}) =>{
     //funciones
     const addProductToCart = (product, productQuantity) =>{
         //reviso si ya existe el producto en el carrito
-        const indiceEncontrado = cartProducts.findIndex((producto)=>{
-            return producto.id === product.id;
+        const indiceEncontrado = cartProducts.findIndex((cartProduct)=>{
+            return cartProduct.id === product.id;
         })//si no existe lo agrego
         if(indiceEncontrado === -1){
             product.cantidad = productQuantity;
@@ -20,13 +20,16 @@ const CartProvider = ({children}) =>{
             }
         }
     }
-    const cartTotal = () => {
-        let total = 0;
-        cartProducts.map((product)=>{
-            total = total + product.price*product.cantidad;
-        });
+    const calculeTotalPrice = () => {
+        let total = 0
+
+        cartProducts.map( (cartProduct) => {
+           total = cartProduct.price + total
+        })
+
         return total
     }
+
     const cartLength = () => {
         let largo = cartProducts.length;
         return largo
@@ -44,8 +47,8 @@ const CartProvider = ({children}) =>{
         }
     }
     const removeItem = (id) => {
-        const indiceEncontrado = cartProducts.findIndex((producto)=>{
-            return producto.id === id;
+        const indiceEncontrado = cartProducts.findIndex((product)=>{
+            return product.id === id;
         })
         cartProducts.splice(indiceEncontrado, 1);
     }
@@ -61,7 +64,7 @@ const CartProvider = ({children}) =>{
         cartProducts,
         addProductToCart,
         cartLength,
-        cartTotal,
+        calculeTotalPrice,
         restarUno,
         removeItem,
         cleanCart,

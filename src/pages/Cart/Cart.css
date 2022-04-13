@@ -1,7 +1,3 @@
-.formatCart{
-    padding-top: 50px;
-}
-
 .cart-item{
     display: flex;
     justify-content: space-evenly;
@@ -23,7 +19,7 @@
 
 .infoCart{
     text-align: center;
-    margin-left: 140px;
+    margin-left: 130px;
     width: 300px;
 }
 
@@ -35,7 +31,24 @@
 }
 
 .btnCart{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.btnDelete{
     text-align: center;
-    padding-top: 60px;
+    padding-top: 55px;
+    padding-right: 30px;
     color: red;
+}
+
+.boxBuy{
+    margin-bottom: 250px;
+    text-align: center;
+}
+
+.priceTotal{
+    display: block;
+
 }
