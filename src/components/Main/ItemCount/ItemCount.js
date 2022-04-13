@@ -1,6 +1,5 @@
 import React,{useState} from "react"
 import Button from '@mui/material/Button'
-import { Link } from "react-router-dom"
 
 // Estilos
 
@@ -26,7 +25,8 @@ const ItemCount = ({stock, action}) => {
             <div className="itemCount">
                 <Button onClick={offAdd} variant="contained" color="success" disabled={count === 1 ? true : false}>-</Button>
                     <p>{count}</p>
-                <Button onClick={(e) => action(e, count)} variant="contained" color="success" disabled={count === stock ? true : false}>+</Button>
+                <Button onClick={onAdd} variant="contained" color="success" disabled={count === stock ? true : false}>+</Button>
+                {/* <Button onClick={(e) => action(e, count)} variant="contained" color="success">Agregar al carrito</Button> */}
             </div>
         </div>
     )

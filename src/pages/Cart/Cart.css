@@ -1,0 +1,41 @@
+.formatCart{
+    padding-top: 50px;
+}
+
+.cart-item{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    box-shadow: 2px 6px 15px rgb(0, 0, 0);
+
+}
+
+.imgCart{
+    height: 150px;
+    width: 110px;
+}
+
+.titleCart{
+    text-align: center;
+}
+
+.infoCart{
+    text-align: center;
+    margin-left: 140px;
+    width: 300px;
+}
+
+.itemCount{
+    display: flex;
+    text-align: center;
+    padding-right: 50px;
+    padding-top: 15px;
+}
+
+.btnCart{
+    text-align: center;
+    padding-top: 60px;
+    color: red;
+}
