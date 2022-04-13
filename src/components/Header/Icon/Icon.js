@@ -17,7 +17,7 @@ import CartContext from '../../../Context/CartContext';
 import './Icon.css'
 
 const CartWidget = () => {
-    const { cartProducts, setCartProducts } = useContext(CartContext)
+    const { cartProducts, removeItem, cleanCart } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -89,16 +89,21 @@ const CartWidget = () => {
                                         <span>$ {cartProduct.price}</span>
                                     </div>
                                     <div className='modalDelete'>
-                                        <DeleteIcon />
+                                        <DeleteIcon onClick={removeItem}/>
                                     </div>
                                 </div>
                             </MenuItem>
                         )
                     })} 
                 <Divider />
-                    <div  className="btn-custom">
+                <div>
+                    <div className='cleanCart'>
+                        <Button onClick={cleanCart} className='btn-spacing' variant="contained" color="success">Vaciar carrito</Button> 
+                    </div>
+                    <div className='buyCart'>
                         <Button variant="contained" color="success"><Link to="/cart">Iniciar la compra</Link></Button> 
                     </div>
+                </div>
             </Menu>
         </div>
     )
