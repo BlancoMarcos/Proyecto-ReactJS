@@ -1,78 +1,71 @@
-import { Container } from "@mui/material"
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import React,{ useContext, useState } from "react";
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button'
-import { useNavigate } from 'react-router-dom';
-import { Link } from "react-router-dom";
-
-// Estilo
-
-import './ItemDetail.css'
-
-// Components
-
+//Componentes
+import React,{useEffect, useState, useContext} from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+import CartContext from "../../../Context/CartContext";
+import { Container, Typography } from "@mui/material";
+import { CardContent } from "@mui/material";
+import { Box } from "@mui/material";
+//Estilos
+import './ItemDetail.css';
 
-// Context
-import CartContext from '../../../Context/CartContext';
-
-
-const DetailPage = ({data}) => {
-
-    const{title, price, stock, description, image, id} = data
-    const navigate = useNavigate()
-    const { cartProducts, addProductToCart } = useContext(CartContext);
-
-    const changePage = () => {
-        navigate(`/productos/${id}`)
-        console.log("Cart products: ", cartProducts)
+function ItemDetail ({data}){
+    //variables
+    const [productQuantity, setProductQuantity] = useState(0);
+    const [mostrarItemCount, setMostrarItemCount] = useState(true);
+    const {addProductToCart} = useContext(CartContext);
+    //funciones
+    const onAdd = (e, count) => {
+        if(!!e & productQuantity<1){
+            setProductQuantity(count);
+        }
     }
-    const addToCart = (e) => {
-        e.stopPropagation()
-        console.log("Productos agregados: ", cartProducts)
-        addProductToCart(data)
-    }
-
-        return (
-            <Container>
-                <div  className="cardDetail">
-                    <div className="btnCard">
-                        <img  className="imgCard" src={`../${image}`} alt={title}/>
-                    </div>
-                    <div>
-                        <Box>
-                            <CardContent>
-                                <Typography className="titleCard" component="div" variant="h4">
-                                    {title}
-                                </Typography>
-                                <Typography className="priceCard" component="div" variant="h5">
-                                    ${price}
-                                </Typography>
-                                <Typography className="textCard" variant="h6" color="text.primary" component="div">
-                                    {description}
-                                </Typography>
-                                <Typography className="stockCard" variant="p" color="text.secundary" component="div">
-                                    Artículos disponibles: {stock}
-                                </Typography>
-                            </CardContent>
-                        </Box>
-                        <ItemCount className="itemCount" stock={stock}/>
-                        <div className="btnDetail">
-                            <Link to='/' className="linkBox">
-                                <Button variant="contained" color="success">Seguir en la Tienda</Button>
-                            </Link>
-                            <Button onClick={addToCart} variant="contained" color="success">Agregar al carrito</Button>
-                            <Link to='/cart' className="linkBox">
-                                <Button variant="contained" color="success">Finalizar compra</Button>
-                            </Link>
-                        </div>
-                    </div>
+    useEffect(()=>{
+        if(productQuantity>0){
+            setMostrarItemCount(false);
+            addProductToCart(data, productQuantity);
+        }
+    },[productQuantity])
+    //return
+    return(
+        <Container>
+            <div className="cardDetail">
+                <div className="btnCard">
+                    <img className="imgCard" src={`../${data.image}`} alt={data.title}></img>
                 </div>
-            </Container>
-          
-        );
-      }
+                <div className="mainItemDetail__details">
+                    <Box>
+                        <CardContent>
+                            <Typography className="titleCard" component="div" variant="h4">
+                                {data.title}
+                            </Typography>
+                            <Typography className="textCard" variant="h6" color="text.primary" component="div">
+                                {data.description}
+                            </Typography>
+                            <Typography className="textCard" variant="h6" color="text.primary" component="div">
+                                $ {data.price}
+                            </Typography>
+                            <Typography className="stockCard" variant="p" color="text.secundary" component="div">
+                                Artículos disponibles: {data.stock}
+                            </Typography>
+                        </CardContent>
+                    </Box>
+                    
+                    {mostrarItemCount ?(
+                        <ItemCount stock={data.stock} initial={1} action={onAdd} className="itemCount"/>
+                        ):(
+                            <div className="spacebtn">
+                                <Link className="btnBuy" to="/cart">
+                                    <Button variant="contained" color="success">Finalizar Compra</Button>
+                                </Link>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+        </Container>
+    )
+}
 
-export default DetailPage
+export default ItemDetail;

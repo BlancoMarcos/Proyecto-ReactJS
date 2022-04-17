@@ -1,32 +1,40 @@
-import React,{ useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
-
-// Componentes
-
-import DetailPage from '../ItemDetail/ItemDetail'
+//Componentes
+import React, { useState, useEffect } from "react";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { mockProducts } from "../Products/Products";
 
-const ItemDetailContainer = () => {
-    const {id} = useParams()
-    const [product, setProduct] = useState({})
-
-    useEffect(() => {
-        filterProductById(mockProducts, id)
-    }, [id])
-
-    const filterProductById = (array, id) => {
-        return array.map((product) => {
-            if(product.id == id) {
-                return setProduct(product)
-            }
+function ItemDetailContainer({id}){
+    const [loading, setLoading] = useState(true);
+    //Estado para el producto
+    const [products, setProducts] = useState([]);
+    //Promesa para obtener los productos
+    const getProducts = () => {
+        let promise = new Promise ((resolve, reject)=>{
+            setTimeout(() => {resolve (mockProducts)}, 2000);
         })
+        let result = promise;
+        return (result);
     }
-
-    return (
-        <div>
-            <DetailPage data={product} />
+    //Efecto de montaje para obtener obtener los productos y luego encontrar
+    //el producto correcto con un find
+    useEffect(()=>{
+        getProducts()
+        .then((dataList)=>{
+            setLoading(false);
+            const encontrado = dataList.find(element => element.id == id)
+            setProducts(encontrado);
+        })
+    })
+    return(
+        <div className="mainItemDetailContainer">
+            <h2>Productos Seleccionado (detalles)</h2>
+            {loading?(
+                <h2>Cargando...</h2>
+            ):(
+                <ItemDetail data={products}/>
+            )}
         </div>
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

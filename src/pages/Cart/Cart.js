@@ -19,12 +19,12 @@ const Cart = () => {
         <Container>
             <div>
             <div className='btnCart'>
-                <Button onClick={cleanCart} variant="contained" color="success">Vaciar carrito</Button> 
+                <Button onClick={cleanCart} variant="contained" color="error">Vaciar carrito</Button> 
                 <Button variant="contained" color="success"><Link to={'/'}>Continuar comprando</Link></Button>
             </div>
                 
                 {cartProducts.map( (cartProduct) => {
-                    const { price, image, title, id, stock } = cartProduct
+                    const { price, image, title } = cartProduct
                     return(
                         <div className="cart-item"  key={cartProduct.id}>
                             <img src={`./${image}`} className='imgCart'/>
@@ -44,9 +44,6 @@ const Cart = () => {
                                     <p>$ {price}</p>
                                 </div>
                             </div>
-                            <div>
-                                <ItemCount className='itemCount'/>
-                            </div>
                             <DeleteForeverSharpIcon fontSize='large' onClick={() => deleteProduct(cartProduct)} className='btnDelete'/>
                         </div>
                     )
@@ -54,9 +51,8 @@ const Cart = () => {
                 
                 <div className="boxBuy">
                     <div >
-                        <div className='priceTotal'>
-                            <p>Total</p>
-                            <span>$ {calculeTotalPrice()}</span>
+                        <div >
+                            <p >Total: ${calculeTotalPrice()}</p>
                         </div>
                         <Button variant="contained" color="success">Completar compra</Button>
                     </div>

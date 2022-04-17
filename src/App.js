@@ -1,43 +1,38 @@
-import './App.css'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-
-// Components
-
-import Header from "./components/Header/NavBar/NavBar";
+//Componentes
+import NavBar from './components/Header/NavBar/NavBar';
+import ItemListContainer from './components/Main/ItemListContainer/ItemListContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-
-// Pages
-
-import ContactPage from './pages/Contact/Contact'
-import HomePage from './pages/Home/HomeProducts'
-import NotFound from './pages/ErrorPage/ErrorPage'
-import DetailItem from './pages/ItemDetail/DetailPage';
 import Cart from './pages/Cart/Cart';
-
-// Context
-import{ CartProvider } from './Context/CartContext';
+//Pages
+import Home from './pages/Home/HomeProducts';
+import NotFound from './pages/ErrorPage/ErrorPage';
+import ItemDetailPage from './pages/ItemDetail/DetailPage';
+import Contact from './pages/Contact/Contact'
+//Estilos
+import './App.css';
+//context
+import {CartProvider} from './Context/CartContext';
 
 
 function App() {
   return (
-
-    //JSX
-
-    <div>
-      <CartProvider>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/:category/" element={<HomePage />} />
-            <Route path="/:category/:id" element={<DetailItem />} />
-            <Route path="/contacto" element={<ContactPage />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </CartProvider>
+    <div className="App">
+        <CartProvider>
+          <BrowserRouter>
+            <NavBar/>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path="/:category/" element={<Home />} />
+              <Route path='/category/:id' element={<ItemListContainer/>}/>
+              <Route path='/cart' element={<Cart/>}/>
+              <Route path='*' element={<NotFound/>}/>
+              <Route path='/contact' element={<Contact/>}/>
+            </Routes>
+            <Footer/>
+          </BrowserRouter>
+        </CartProvider>
+      
     </div>
   );
 }

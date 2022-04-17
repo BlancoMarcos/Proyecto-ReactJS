@@ -1,62 +1,52 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button'
-import { useNavigate } from 'react-router-dom';
-import React,{ useContext, useEffect, useState } from 'react';
+//Componentes
+import React,{useContext, useEffect, useState} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-
-// Estilo
-
-import './Items.css'
-
-// Context
+import { Link } from 'react-router-dom';
 import CartContext from '../../../Context/CartContext';
+import { Button } from '@mui/material';
+import { Card } from '@mui/material';
+import { Typography } from '@mui/material';
 
-export default function Cards({ data }) {
-    const {title, price, image, id, stock} = data
+//Estilos
+import './Items.css';
 
-    // Creamos una const con "useNavigate" para reemplazarla por "Link"
-    const navigate = useNavigate()
-    const [productQuantity, setProductQuantity] = useState(0)
-    const [mostrarItemCount, setMostrarItemCount] = useState(true)
-    const { cartProducts, addProductToCart } = useContext(CartContext)
-    const changePage = () => {
-        navigate(`/productos/${id}`)
-        console.log("Cart products: ", cartProducts)
-    }
-
-    const addToCart = (e) => {
-        e.stopPropagation()
-        console.log("Productos agregados: ", cartProducts)
-        addProductToCart(data)
-
-    }
-
+function Item({data}) {
+    const {title, image, price, stock, id} = data;
+    const [productQuantity, setProductQuantity] = useState(0);
+    const [mostrarItemCount, setMostrarItemCount] = useState(true);
+    const {addProductToCart} = useContext(CartContext);
+    
     const onAdd = (e, count) => {
         if(!!e & productQuantity<1){
-            setProductQuantity(count)
+            setProductQuantity(count);
         }
     }
-    useEffect( () => {
+    useEffect(()=>{
         if(productQuantity>0){
             setMostrarItemCount(false);
-            addProductToCart(data, productQuantity)
+            addProductToCart(data, productQuantity);
         }
-    })
+    },[productQuantity]) 
+    return(
+        <Card sx={{maxWidth: 320,}} className="cardBox">
+            <Link to={`/category/${id}`}>
+            <img src={image} className="cardItem__img" alt={title}></img>
+            </Link>
+            <Typography gutterBottom variant="h5" component="div">
+                {title}
+            </Typography >
+            <Typography gutterBottom variant="h6" color="text.primary">
+                Precio: $ {price}
+            </Typography >
+            {mostrarItemCount ?(
+                <ItemCount stock={stock} initial={1} action={onAdd}/>
+                ):( <Link className="btnBuy" to="/cart">
+                        <Button variant="contained" color="success">Finalizar Compra</Button>
+                    </Link>
+                    )
+            }
+        </Card>
+    )
+}
 
-    return (
-
-            <Card sx={{maxWidth: 340,}} className="cardBox" onClick={changePage}>
-                <img className='itemCard' src={`./${image}`} alt={image}/>
-                <CardContent>
-                    <Typography className="titleBox" gutterBottom variant="h5" component="div">
-                        {title}
-                    </Typography>
-                    <Typography gutterBottom variant="h6" color="text.primary">
-                        $ {price}
-                    </Typography>
-                    <Button onClick={addToCart} variant="contained" color="success">Agregar al carrito</Button>
-                </CardContent>
-            </Card>
-      )}
+export default Item;

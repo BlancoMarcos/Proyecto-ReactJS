@@ -1,57 +1,56 @@
-import React,{useEffect, useState} from "react";
-import { Container } from "@mui/material";
-
-// Estilo
-
-import './ItemList.css'
-
-// Components
-
+//Componentes
+import React,{useState, useEffect} from "react";
+import Item from "../Item/Items";
 import { mockProducts } from "../Products/Products";
-import Cards from "../Item/Items";
+import { nanoid } from 'nanoid';
 import { useParams } from "react-router-dom";
+//Estilos
+import './ItemList.css';
 
-
-const ListProducts = (props) => {
-    
-    const {category} = useParams()
-    const [products, setProducts] = useState([])
-
-    // Cramos una promesa para que nos devuelva los productos
+const ItemList = () =>{
+    const [products, setProducts] = useState([]);
+    const {id} = useParams();
+    const [loading, setLoading] = useState(true);
+    //Promesa para obtener los productos
     const getProducts = () => {
-        return new Promise ((resolve, reject) => {
-            return resolve(mockProducts)
+        let promise = new Promise ((resolve, reject)=>{
+            setTimeout(() => {resolve (mockProducts)}, 2000);
         })
+        let result = promise;
+        return (result);
     }
-    // Usamos useEffect para poder visualizar los datos
-    useEffect( () => {
-        setProducts([])
-        getProducts().then( (productos) => {
-            category ? filterProductByCategory(productos, category) : setProducts(productos)
+    //Efecto de montaje para obteneter el listado de productos
+    useEffect(()=>{
+        setProducts([])//Vacío el array para que se limpie y no se acumulen items
+        getProducts().then((dataproductos)=>{
+            setLoading(false);
+            id ? filterByCategory(dataproductos, id) : setProducts(dataproductos)
         })
-    }, [category])
-
-    const filterProductByCategory = (array , category) => {
-        return array.map( (product, i) => {
-            if(product.category === category) {
-               return setProducts(products => [...products, product]);
+    },[id])
+    //filtro de prodcutos por categoría
+    const filterByCategory = (array, category) =>{
+        return array.map((product)=>{
+            if(product.type == category){
+                return setProducts(products => [...products, product])
             }
         })
     }
-
-
+    //return JSX
     return(
         <div className="cards">
-            <Container fixed className="ultimosProductos">
-                <h2>{props.title}</h2>
-            </Container>
-            {products.map ((product) => {
-                return(
-                        <Cards data={product} key={product.id}/>
-                )
-            })}
-        </div>  
-            )
+            {loading?(
+                <h2>Cargando...</h2>
+            ):(
+                <>
+                {products.map((product)=>{
+                    return(
+                        <Item data={product} key={nanoid()}/>
+                    )
+                })}
+                </>
+            )}
+        </div>
+    )
 }
 
-export default ListProducts;
+export default ItemList;

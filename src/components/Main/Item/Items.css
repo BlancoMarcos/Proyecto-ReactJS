@@ -1,11 +1,16 @@
-.itemCard{
-    height: 350px;
-    width: 290px;
+.cardBox{
+    height: 620px;
+    text-align: center;
 }
 
-.cardBox{
-    height: 500px;
-    text-align: center;
-    background-color: cornsilk;
-    margin-bottom: 40px;
+.cardItem__img {
+    width: 100%;
+    max-width: 480px;
+    height: 400px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.btnBuy{
+    text-decoration: none;
 }

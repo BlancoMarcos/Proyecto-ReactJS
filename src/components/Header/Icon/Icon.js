@@ -17,7 +17,7 @@ import CartContext from '../../../Context/CartContext';
 import './Icon.css'
 
 const CartWidget = () => {
-    const { cartProducts, removeItem, cleanCart } = useContext(CartContext)
+    const { cuantosProductos, cartProducts, removeItem, cleanCart } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -38,7 +38,7 @@ const CartWidget = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
             />
-            <p className='countProduct'>{cartProducts.length}</p>
+            <p className='countProduct'>{cuantosProductos}</p>
             <Menu
                 anchorEl={anchorEl}
                 id="account-menu"

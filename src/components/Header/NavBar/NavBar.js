@@ -48,7 +48,7 @@ function Header() {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
                 >
-                <Link to={'#productos'} href='#fade-menu'>Productos</Link>
+                <Link to={'/'} href='#fade-menu'>Productos</Link>
             </Button>
             <Menu
                 id="productos"
@@ -76,7 +76,7 @@ function Header() {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 >
-                <Link to={'/contacto'} href='/contacto'>CONTACTO</Link>
+                <Link to={'/contact'} href='/contacto'>CONTACTO</Link>
             </Button>
             </div>
             <CartWidget />
