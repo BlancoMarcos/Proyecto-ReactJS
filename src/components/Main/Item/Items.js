@@ -36,7 +36,7 @@ function Item({data}) {
                 {title}
             </Typography >
             <Typography gutterBottom variant="h6" color="text.primary">
-                Precio: $ {price}
+                ${price}
             </Typography >
             {mostrarItemCount ?(
                 <ItemCount stock={stock} initial={1} action={onAdd}/>
