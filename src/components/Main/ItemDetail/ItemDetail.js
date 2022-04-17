@@ -40,11 +40,11 @@ function ItemDetail ({data}){
                             <Typography className="titleCard" component="div" variant="h4">
                                 {data.title}
                             </Typography>
-                            <Typography className="textCard" variant="h6" color="text.primary" component="div">
-                                {data.description}
+                            <Typography className="priceCard" variant="h6" color="text.primary" component="div">
+                                $ {data.price}
                             </Typography>
                             <Typography className="textCard" variant="h6" color="text.primary" component="div">
-                                $ {data.price}
+                                {data.description}
                             </Typography>
                             <Typography className="stockCard" variant="p" color="text.secundary" component="div">
                                 Artículos disponibles: {data.stock}
@@ -56,6 +56,9 @@ function ItemDetail ({data}){
                         <ItemCount stock={data.stock} initial={1} action={onAdd} className="itemCount"/>
                         ):(
                             <div className="spacebtn">
+                                <Link className="btnBuy" to="/">
+                                    <Button variant="contained" color="success">Seguir Comprando</Button>
+                                </Link>
                                 <Link className="btnBuy" to="/cart">
                                     <Button variant="contained" color="success">Finalizar Compra</Button>
                                 </Link>
