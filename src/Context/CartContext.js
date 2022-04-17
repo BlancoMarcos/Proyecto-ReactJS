@@ -72,6 +72,12 @@ const CartProvider = ({children}) =>{
         setCartProducts([]);
         cartCantProductos();
     }
+
+    const deleteProduct = (product) => {
+        setCartProducts(cartProducts.filter( cartProduct => cartProduct.id !== product.id))
+    }
+
+
     //data a exportar
     const data = {
         cartProducts,
@@ -82,6 +88,7 @@ const CartProvider = ({children}) =>{
         calculeTotalPrice,
         restarUno,
         removeItem,
+        deleteProduct,
         cleanCart
     }
     //return
