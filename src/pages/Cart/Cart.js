@@ -13,7 +13,7 @@ import ItemCount from '../../components/Main/ItemCount/ItemCount';
 import './Cart.css'
 
 const Cart = () => {
-    const { cartProducts, deleteProduct, calculeTotalPrice, cleanCart } = useContext(CartContext)
+    const { cartProducts, deleteProduct, cartTotal, cleanCart, cantidad } = useContext(CartContext)
     console.log("cartProducts:", cartProducts)
     return(
         <Container>
@@ -24,13 +24,13 @@ const Cart = () => {
             </div>
                 
                 {cartProducts.map( (cartProduct) => {
-                    const { price, image, title } = cartProduct
+                    const { price, image, title, cantidad } = cartProduct
                     return(
                         <div className="cart-item"  key={cartProduct.id}>
                             <img src={`./${image}`} className='imgCart'/>
                             <div className='infoCart'>
                                 <div className='titleCart'>
-                                    <p>Producto</p>
+                                    <strong>Producto</strong>
                                 </div>
                                 <div >
                                     <p>{title}</p>
@@ -38,9 +38,17 @@ const Cart = () => {
                             </div>
                             <div className='infoCart'>
                                 <div className='titleCart'>
-                                    <p>Precio</p>
+                                    <strong>Cantidad</strong>
                                 </div>
-                                <div >
+                                <div>
+                                    <p>{cantidad}</p>
+                                </div>
+                            </div>
+                            <div className='infoCart'>
+                                <div className='titleCart'>
+                                    <strong>Precio</strong>
+                                </div>
+                                <div>
                                     <p>$ {price}</p>
                                 </div>
                             </div>
@@ -50,12 +58,10 @@ const Cart = () => {
                 })}
                 
                 <div className="boxBuy">
-                    <div >
-                        <div >
-                            <p >Total: ${calculeTotalPrice()}</p>
+                        <div className='priceTotal'>
+                            <strong>Total: ${cartTotal()}</strong>
                         </div>
                         <Button variant="contained" color="success">Completar compra</Button>
-                    </div>
                 </div>
             </div>
         </Container>

@@ -21,6 +21,7 @@
     text-align: center;
     margin-left: 130px;
     width: 300px;
+    padding-top: 33px;
 }
 
 .itemCount{
@@ -49,6 +50,7 @@
 }
 
 .priceTotal{
-    display: block;
-
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 20px;
 }

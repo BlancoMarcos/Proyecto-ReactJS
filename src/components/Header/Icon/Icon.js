@@ -17,7 +17,7 @@ import CartContext from '../../../Context/CartContext';
 import './Icon.css'
 
 const CartWidget = () => {
-    const { cuantosProductos, cartCantProductos, cartProducts, removeItem, cleanCart } = useContext(CartContext)
+    const { cuantosProductos, cartCantProductos, cartProducts, removeItem, cleanCart, cantidad } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -85,8 +85,9 @@ const CartWidget = () => {
                                         <img className='modalImg' src={`../${cartProduct.image}`} /> 
                                     </div>
                                     <div className='modalText'>
-                                        <p>{cartProduct.title}</p>
-                                        <span>$ {cartProduct.price}</span>
+                                        <strong>{cartProduct.title}</strong>
+                                        <p>$ {cartProduct.price * cartProduct.cantidad}</p>
+                                        <p>Cantidad: {cartProduct.cantidad}</p>
                                     </div>
                                     <div className='modalDelete'>
                                         <DeleteIcon onClick={removeItem}/>

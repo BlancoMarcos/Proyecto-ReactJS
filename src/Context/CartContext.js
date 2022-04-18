@@ -23,13 +23,12 @@ const CartProvider = ({children}) =>{
             }
         }
     }
-    const calculeTotalPrice = () => {
-        let total = 0
-    
-        cartProducts.map( (cartProduct) => {
-           total = cartProduct.price + total
-        })
-    
+    const cartTotal = () => {
+        //precio total de los productos en el carrito considerando sus cantidades
+        let total = 0;
+        cartProducts.map((product)=>{
+            total = total + product.price*product.cantidad;
+        });
         return total
     }
     const cartLength = () => {
@@ -87,7 +86,7 @@ const CartProvider = ({children}) =>{
         addProductToCart,
         cartCantProductos,
         cartLength,
-        calculeTotalPrice,
+        cartTotal,
         restarUno,
         removeItem,
         deleteProduct,
