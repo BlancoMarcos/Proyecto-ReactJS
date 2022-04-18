@@ -41,7 +41,9 @@ function Header() {
                 >
                 <Link to={'/'} href='/'>HOME</Link>
             </Button>
-            <Button className='prodBox'
+
+            {/* Deshabilitamos las categorías */}
+            {/* <Button className='prodBox'
                 id="fade-button"
                 aria-controls={open ? 'fade-menu' : undefined}
                 aria-haspopup="true"
@@ -69,7 +71,7 @@ function Header() {
                 <MenuItem onClick={handleClose}>
                     <Link to={'/barcelona'}>Barcelona</Link>
                 </MenuItem>
-            </Menu>
+            </Menu> */}
             <Button
                 id="fade-button"
                 aria-controls={open ? 'fade-menu' : undefined}

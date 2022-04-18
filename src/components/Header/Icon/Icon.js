@@ -33,12 +33,10 @@ const CartWidget = () => {
             <ShoppingCartIcon  className='buyIcon'
                 onClick={handleClick}
                 fontSize='large'
-                sx={{ ml: 2 }}
                 aria-controls={open ? 'account-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
             />
-            <p className='countProduct'>{cuantosProductos}</p>
             <Menu
                 anchorEl={anchorEl}
                 id="account-menu"

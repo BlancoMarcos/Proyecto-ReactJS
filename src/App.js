@@ -13,6 +13,7 @@ import Contact from './pages/Contact/Contact'
 import './App.css';
 //context
 import {CartProvider} from './Context/CartContext';
+import ItemDetailContainer from './components/Main/ItemListContainer/ItemListContainer';
 
 
 function App() {
@@ -23,8 +24,7 @@ function App() {
             <NavBar/>
             <Routes>
               <Route path='/' element={<Home/>}/>
-              <Route path="/:category/" element={<Home />} />
-              <Route path='/category/:id' element={<ItemListContainer/>}/>
+              <Route path='/category/:id' element={<ItemDetailContainer/>}/>
               <Route path='/cart' element={<Cart/>}/>
               <Route path='*' element={<NotFound/>}/>
               <Route path='/contact' element={<Contact/>}/>
