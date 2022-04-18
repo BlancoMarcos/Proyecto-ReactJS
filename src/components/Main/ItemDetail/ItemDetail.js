@@ -11,11 +11,11 @@ import { Box } from "@mui/material";
 import './ItemDetail.css';
 
 function ItemDetail ({data}){
-    //variables
+    
     const [productQuantity, setProductQuantity] = useState(0);
     const [mostrarItemCount, setMostrarItemCount] = useState(true);
     const {addProductToCart} = useContext(CartContext);
-    //funciones
+
     const onAdd = (e, count) => {
         if(!!e & productQuantity<1){
             setProductQuantity(count);
@@ -27,7 +27,7 @@ function ItemDetail ({data}){
             addProductToCart(data, productQuantity);
         }
     },[productQuantity])
-    //return
+
     return(
         <Container>
             <div className="cardDetail">

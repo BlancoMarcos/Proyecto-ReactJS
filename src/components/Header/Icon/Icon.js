@@ -17,7 +17,7 @@ import CartContext from '../../../Context/CartContext';
 import './Icon.css'
 
 const CartWidget = () => {
-    const { cuantosProductos, cartProducts, removeItem, cleanCart } = useContext(CartContext)
+    const { cuantosProductos, cartCantProductos, cartProducts, removeItem, cleanCart } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {

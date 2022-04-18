@@ -9,9 +9,8 @@ import CartContext from "../../../Context/CartContext"
 
 import './ItemCount.css'
 
-const ItemCount = ({stock, initial, action, data}) => {
+const ItemCount = ({stock, initial, action}) => {
     const [count, setCount] = useState(initial)
-    const { cartProducts, addProductToCart } = useContext(CartContext)
 
     const handleIncrease = () => {
         if(count < stock) {
@@ -25,13 +24,6 @@ const ItemCount = ({stock, initial, action, data}) => {
         }
     }
 
-    const addToCart = (e) => {
-        e.stopPropagation()
-        console.log("Productos agregados: ", cartProducts)
-        addProductToCart(data)
-
-    }
-
     return(
         <div className="btnBox">
             <div className="btnCount">
@@ -39,7 +31,7 @@ const ItemCount = ({stock, initial, action, data}) => {
                     <p className="btn">-</p>
                 </Button>
                 <p>{count}</p>
-                <Button className="btn" onClick={handleIncrease} color="success"variant="contained" disabled={count === stock ? true : false}>
+                <Button onClick={handleIncrease} color="success" variant="contained" disabled={count === stock ? true : false}>
                     <p className="btn">+</p>
                 </Button>
             </div>

@@ -27,7 +27,7 @@ const ItemList = () =>{
             id ? filterByCategory(dataproductos, id) : setProducts(dataproductos)
         })
     },[id])
-    //filtro de prodcutos por categoría
+    //filtro de productos por categoría
     const filterByCategory = (array, category) =>{
         return array.map((product)=>{
             if(product.type == category){
@@ -35,7 +35,7 @@ const ItemList = () =>{
             }
         })
     }
-    //return JSX
+    
     return(
         <div className="cards">
             {loading?(

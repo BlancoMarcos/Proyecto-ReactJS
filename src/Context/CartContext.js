@@ -37,13 +37,15 @@ const CartProvider = ({children}) =>{
         let largo = cartProducts.length;
         return largo
     }
+    
     const cartCantProductos = () => {
-        let cantidad = 1;
+        let cantidad = 0;
         for(const producto of cartProducts){
             cantidad = cantidad + producto.cantidad;
         }
         setCuantosProductos(cantidad);
     }
+
     const restarUno = (id) => {
         //primero ubico el indice del producto dentro del array
         const indiceEncontrado = cartProducts.findIndex((producto)=>{
