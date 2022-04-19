@@ -13,8 +13,8 @@ import './ItemDetail.css';
 function ItemDetail ({data}){
     
     const [productQuantity, setProductQuantity] = useState(0);
-    const [mostrarItemCount, setMostrarItemCount] = useState(true);
     const {addProductToCart} = useContext(CartContext);
+    const [mostrarItemCount, setMostrarItemCount] = useState(true);
 
     const onAdd = (e, count) => {
         if(!!e & productQuantity<1){

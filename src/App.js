@@ -7,13 +7,12 @@ import Cart from './pages/Cart/Cart';
 //Pages
 import Home from './pages/Home/HomeProducts';
 import NotFound from './pages/ErrorPage/ErrorPage';
-import ItemDetailPage from './pages/ItemDetail/DetailPage';
+import DetailPage from './pages/ItemDetail/DetailPage';
 import Contact from './pages/Contact/Contact'
 //Estilos
 import './App.css';
 //context
 import {CartProvider} from './Context/CartContext';
-import ItemDetailContainer from './components/Main/ItemListContainer/ItemListContainer';
 
 
 function App() {
@@ -23,11 +22,12 @@ function App() {
           <BrowserRouter>
             <NavBar/>
             <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/category/:id' element={<ItemDetailContainer/>}/>
               <Route path='/cart' element={<Cart/>}/>
-              <Route path='*' element={<NotFound/>}/>
               <Route path='/contact' element={<Contact/>}/>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/:category/' element={<Home/>}/>
+              <Route path="/:category/:id" element={<DetailPage />}/>
+              <Route path='*' element={<NotFound/>}/>
             </Routes>
             <Footer/>
           </BrowserRouter>
