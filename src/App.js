@@ -3,7 +3,7 @@ import NavBar from './components/Header/NavBar/NavBar';
 import ItemListContainer from './components/Main/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-import Cart from './pages/Cart/Cart';
+import CartPage from './pages/Cart/Cart';
 //Pages
 import Home from './pages/Home/HomeProducts';
 import NotFound from './pages/ErrorPage/ErrorPage';
@@ -22,7 +22,7 @@ function App() {
           <BrowserRouter>
             <NavBar/>
             <Routes>
-              <Route path='/cart' element={<Cart/>}/>
+              <Route path='/cart' element={<CartPage/>}/>
               <Route path='/contact' element={<Contact/>}/>
               <Route path='/' element={<Home/>}/>
               <Route path='/:category/' element={<Home/>}/>

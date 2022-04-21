@@ -1,6 +1,10 @@
 import React,{useState} from "react"
 import Button from '@mui/material/Button'
 
+import { useContext } from "react"
+
+import CartContext from "../../../Context/CartContext"
+
 // Estilos
 
 import './ItemCount.css'
