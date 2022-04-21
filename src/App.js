@@ -7,7 +7,7 @@ import CartPage from './pages/Cart/Cart';
 //Pages
 import Home from './pages/Home/HomeProducts';
 import NotFound from './pages/ErrorPage/ErrorPage';
-import DetailPage from './pages/ItemDetail/DetailPage';
+import DetailPage from './pages/Detail/ItemDetail';
 import Contact from './pages/Contact/Contact'
 //Estilos
 import './App.css';
