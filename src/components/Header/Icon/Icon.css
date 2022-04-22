@@ -7,8 +7,10 @@
 
 .countProduct{
     color: #0C84B4;
-    padding-top: 15px;
-    padding-right: 10px;
+    margin-top: 30px;
+    height: 20px;
+    width: 20px;
+    padding-right: 15px;
 }
 
 .modalImg{

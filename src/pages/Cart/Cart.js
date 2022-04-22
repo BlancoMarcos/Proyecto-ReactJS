@@ -2,15 +2,19 @@
 import React,{useContext, useEffect, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
-import { nanoid } from 'nanoid';
 import ModalCustom from '../../components/Main/Modal/Modal';
+
 //Context
 import CartContext from '../../Context/CartContext';
+
 //Firebase
 import database from '../../services/FirebaseConfig';
 import { addDoc, collection } from 'firebase/firestore';
+
+//MUI
 import { Container } from '@mui/material';
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';
+
 //Estilos
 import './Cart.css';
 

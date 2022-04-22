@@ -1,5 +1,4 @@
 // Components
-
 import TitleMain from '../../components/Main/TextMain/TitleMain';
 import ListProducts from '../../components/Main/ItemList/ItemList'
 

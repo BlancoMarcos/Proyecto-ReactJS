@@ -1,10 +1,12 @@
+//React
 import React,{ useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 
 // Componentes
-
-import DetailPage from '../../../pages/ItemDetail/ItemDetail'
 import { mockProducts } from "../Products/Products";
+
+//Pages
+import DetailPage from '../../../pages/ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
     const {id} = useParams()

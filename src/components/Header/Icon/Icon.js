@@ -1,23 +1,23 @@
 // React
 import { useState, useContext } from 'react'
+import { Link } from 'react-router-dom';
 
 // MUI
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
-import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 
-// Components
+// Context
 import CartContext from '../../../Context/CartContext';
 
 // Estilo
 import './Icon.css'
 
 const CartWidget = () => {
-    const { cuantosProductos, cartCantProductos, cartProducts, removeItem, cleanCart, cantidad } = useContext(CartContext)
+    const { cartQty, cartProducts, removeItem, cleanCart, cantidad } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -30,13 +30,16 @@ const CartWidget = () => {
 
     return (
         <div className='buyIcon'>
-            <ShoppingCartIcon  className='buyIcon'
+            <ShoppingCartIcon  className='icon'
                 onClick={handleClick}
                 fontSize='large'
                 aria-controls={open ? 'account-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
             />
+            <div className='countProduct'>
+                <p>{cartQty()}</p>             
+            </div>
             <Menu
                 anchorEl={anchorEl}
                 id="account-menu"

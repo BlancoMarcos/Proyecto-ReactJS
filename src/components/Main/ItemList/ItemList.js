@@ -1,10 +1,15 @@
 //Componentes
-import React,{useState, useEffect} from "react";
-import Item from "../Item/Items";
 import { nanoid } from 'nanoid';
+import Item from "../Item/Items";
+
+//React
+import React,{useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
+
+//Firebase
 import { collection, getDocs } from "firebase/firestore";
 import database from "../../../services/FirebaseConfig";
+
 //Estilos
 import './ItemList.css';
 

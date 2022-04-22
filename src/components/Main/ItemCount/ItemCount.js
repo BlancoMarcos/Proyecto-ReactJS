@@ -1,12 +1,10 @@
+//React
 import React,{useState} from "react"
+
+//MUI
 import Button from '@mui/material/Button'
 
-import { useContext } from "react"
-
-import CartContext from "../../../Context/CartContext"
-
 // Estilos
-
 import './ItemCount.css'
 
 const ItemCount = ({stock, initial, action}) => {

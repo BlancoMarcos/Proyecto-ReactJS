@@ -1,7 +1,7 @@
+//MUI
 import Container from '@mui/material/Container'
 
 // Estilo
-
 import './ErrorPage.css'
 
 const NotFound = () => {

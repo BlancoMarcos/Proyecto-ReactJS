@@ -78,6 +78,9 @@ const CartProvider = ({children}) =>{
         setCartProducts(cartProducts.filter( cartProduct => cartProduct.id !== product.id))
     }
 
+    const cartQty = () => {
+        return cartProducts.reduce((total, product) => total += product.cantidad, 0)
+    }
 
     //data a exportar
     const data = {
@@ -90,7 +93,8 @@ const CartProvider = ({children}) =>{
         restarUno,
         removeItem,
         deleteProduct,
-        cleanCart
+        cleanCart,
+        cartQty
     }
     //return
     return(

@@ -1,3 +1,4 @@
+//Estilos
 import './Footer.css'
 
 const Footer = () => {

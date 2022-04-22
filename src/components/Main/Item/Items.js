@@ -1,8 +1,14 @@
-//Componentes
+//React
 import React,{useContext, useEffect, useState} from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
+
+//Componentes
+import ItemCount from '../ItemCount/ItemCount';
+
+//Context
 import CartContext from '../../../Context/CartContext';
+
+//MUI
 import { Button } from '@mui/material';
 import { Card } from '@mui/material';
 import { Typography } from '@mui/material';
