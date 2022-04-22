@@ -7,7 +7,7 @@ import ModalCustom from '../../components/Main/Modal/Modal';
 //Context
 import CartContext from '../../Context/CartContext';
 //Firebase
-import database from '../../FirebaseConfig';
+import database from '../../services/FirebaseConfig';
 import { addDoc, collection } from 'firebase/firestore';
 import { Container } from '@mui/material';
 import DeleteForeverSharpIcon from '@mui/icons-material/DeleteForeverSharp';

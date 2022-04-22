@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 // Componentes
 
-import DetailPage from '../ItemDetail/ItemDetail'
+import DetailPage from '../../../pages/ItemDetail/ItemDetail'
 import { mockProducts } from "../Products/Products";
 
 const ItemDetailContainer = () => {

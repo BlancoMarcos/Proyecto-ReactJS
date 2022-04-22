@@ -62,3 +62,10 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.buttonBuy{
+    text-decoration: none;
+    text-align: center;
+    width: 660px;
+    padding-top: 80px;
+}

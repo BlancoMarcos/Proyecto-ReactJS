@@ -1,18 +1,21 @@
+//React
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //Componentes
 import NavBar from './components/Header/NavBar/NavBar';
-import ItemListContainer from './components/Main/ItemListContainer/ItemListContainer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-import CartPage from './pages/Cart/Cart';
+
 //Pages
 import Home from './pages/Home/HomeProducts';
 import NotFound from './pages/ErrorPage/ErrorPage';
-import DetailPage from './pages/Detail/ItemDetail';
+import DetailPage from './pages/ItemDetail/ItemDetail';
 import Contact from './pages/Contact/Contact'
+import CartPage from './pages/Cart/Cart';
+
+//Context
+import {CartProvider} from './Context/CartContext';
+
 //Estilos
 import './App.css';
-//context
-import {CartProvider} from './Context/CartContext';
 
 
 function App() {

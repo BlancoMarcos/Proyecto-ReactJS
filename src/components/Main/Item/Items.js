@@ -11,7 +11,7 @@ import { Typography } from '@mui/material';
 import './Items.css';
 
 function Item({data}) {
-    const {title, image, price, stock, id} = data;
+    const {title, image, price, stock, id, description} = data;
     const [productQuantity, setProductQuantity] = useState(0);
     const [mostrarItemCount, setMostrarItemCount] = useState(true);
     const {addProductToCart} = useContext(CartContext);

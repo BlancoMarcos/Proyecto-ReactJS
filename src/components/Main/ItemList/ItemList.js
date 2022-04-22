@@ -1,12 +1,10 @@
 //Componentes
 import React,{useState, useEffect} from "react";
 import Item from "../Item/Items";
-import { mockProducts } from "../Products/Products";
 import { nanoid } from 'nanoid';
 import { useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import database from "../../../FirebaseConfig";
-
+import database from "../../../services/FirebaseConfig";
 //Estilos
 import './ItemList.css';
 
