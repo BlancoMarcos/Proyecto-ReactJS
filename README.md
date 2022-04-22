@@ -14,7 +14,7 @@ Abra http://localhost:3000 para verlo en su navegador.
 La página se volverá a cargar cuando realice cambios.
 También puede ver errores del sitio en la consola.
 
-### Dependecias
+## Dependecias
 
 Se utilizó:
 
@@ -24,7 +24,7 @@ Se utilizó:
     -   NanoID
     -   React Router DOM
 
-### Autor
+## Autor
 
 Marcos Nicolás Blanco
 
